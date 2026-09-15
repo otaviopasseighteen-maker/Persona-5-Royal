@@ -1,15 +1,18 @@
 const links = [
-  ['Characters', 'pages/characters.html'],
-  ['Personas', 'pages/personas.html'],
-  ['Shadows', 'pages/shadows.html'],
-  ['Palaces', 'pages/palaces.html'],
-  ['Confidants', 'pages/confidants.html'],
-  ['Skills', 'pages/skills.html'],
-  ['Items', 'pages/items.html'],
-  ['Guide', 'pages/guide.html']
+  ['Characters', 'characters.html'],
+  ['Personas', 'personas.html'],
+  ['Shadows', 'shadows.html'],
+  ['Palaces', 'palaces.html'],
+  ['Confidants', 'confidants.html'],
+  ['Skills', 'skills.html'],
+  ['Items', 'items.html'],
+  ['Guide', 'guide.html']
 ];
 
 export function renderNavigation(target) {
   if (!target) return;
-  target.innerHTML = `<a href="index.html">Home</a> ${links.map(([label, href]) => `<a href="../${href}">${label}</a>`).join('')}`;
+  const inPages = window.location.pathname.includes('/pages/');
+  const prefix = inPages ? '' : 'pages/';
+  const home = inPages ? '../index.html' : 'index.html';
+  target.innerHTML = `<a href="${home}">Home</a> ${links.map(([label, href]) => `<a href="${prefix}${href}">${label}</a>`).join('')}`;
 }
