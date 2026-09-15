@@ -1,302 +1,194 @@
 /* =====================================================
-   PERSONA 5 ROYAL
-   MAIN JAVASCRIPT
+   PERSONA 5 ROYAL — SITE LOGIC
+   Data-driven navigation + page interactions
 ===================================================== */
-
 
 /* =====================================================
-   LOADING SCREEN
+   LOADING / INTRO
 ===================================================== */
-
-document.body.classList.add("loading");
-
 const loadingScreen = document.getElementById("loading-screen");
 const loadingProgress = document.getElementById("loading-progress");
 const loadingText = document.getElementById("loading-text");
+const trailerScreen = document.getElementById("trailer-screen");
+const mainSite = document.getElementById("main-site");
+const skipTrailer = document.getElementById("skip-trailer");
 
-let progress = 0;
+if (loadingScreen && loadingProgress && loadingText) {
+    document.body.classList.add("loading");
+    let progress = 0;
+    const messages = [
+        "INITIALIZING METAVERSE...",
+        "LOADING PHANTOM THIEVES...",
+        "ACCESSING PALACES...",
+        "SYNCHRONIZING PERSONAS...",
+        "PREPARING TOKYO...",
+        "WELCOME, PHANTOM THIEF."
+    ];
 
-const loadingMessages = [
-    "INITIALIZING METAVERSE...",
-    "LOADING PHANTOM THIEVES...",
-    "ACCESSING PALACES...",
-    "SYNCHRONIZING PERSONAS...",
-    "PREPARING TOKYO...",
-    "WELCOME, PHANTOM THIEF."
-];
-
-const loadingInterval = setInterval(() => {
-
-    progress += Math.floor(Math.random() * 8) + 3;
-
-    if (progress >= 100) {
-
-        progress = 100;
-
-        clearInterval(loadingInterval);
-
-        loadingProgress.style.width = "100%";
-
-        loadingText.textContent =
-            loadingMessages[loadingMessages.length - 1];
-
-        setTimeout(() => {
-
-            loadingScreen.classList.add("loaded");
-
-            document.body.classList.remove("loading");
-
-            startTrailer();
-
-        }, 700);
-
-    } else {
-
+    const interval = setInterval(() => {
+        progress = Math.min(100, progress + Math.floor(Math.random() * 8) + 3);
         loadingProgress.style.width = `${progress}%`;
+        const index = Math.min(messages.length - 1, Math.floor((progress / 100) * (messages.length - 1)));
+        loadingText.textContent = messages[index];
 
-        const messageIndex =
-            Math.floor(
-                (progress / 100) *
-                (loadingMessages.length - 1)
-            );
-
-        loadingText.textContent =
-            loadingMessages[messageIndex];
-
-    }
-
-}, 180);
-
-
-/* =====================================================
-   TRAILER
-===================================================== */
-
-const trailerScreen =
-    document.getElementById("trailer-screen");
-
-const mainSite =
-    document.getElementById("main-site");
-
-const skipTrailer =
-    document.getElementById("skip-trailer");
-
-
-function startTrailer() {
-
-    trailerScreen.style.display = "flex";
-
+        if (progress >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+                loadingScreen.classList.add("loaded");
+                document.body.classList.remove("loading");
+                if (trailerScreen) trailerScreen.style.display = "flex";
+            }, 500);
+        }
+    }, 120);
 }
-
 
 function closeTrailer() {
-
+    if (!trailerScreen) return;
     trailerScreen.style.opacity = "0";
-
     trailerScreen.style.pointerEvents = "none";
-
     setTimeout(() => {
-
         trailerScreen.style.display = "none";
-
-        mainSite.classList.add("visible");
-
+        if (mainSite) mainSite.classList.add("visible");
     }, 700);
-
 }
 
-
-skipTrailer.addEventListener(
-    "click",
-    closeTrailer
-);
-
+if (skipTrailer) skipTrailer.addEventListener("click", closeTrailer);
 
 /* =====================================================
-   CHARACTERS
+   MOBILE NAVIGATION
 ===================================================== */
+const menuButton = document.getElementById("menu-button");
+const navigation = document.querySelector(".navbar nav");
 
-const characters =
-    document.querySelectorAll(".character");
-
-const characterButtons =
-    document.querySelectorAll(
-        ".character-navigation button"
-    );
-
-
-function showCharacter(characterName) {
-
-    characters.forEach(character => {
-
-        character.classList.remove("active");
-
-    });
-
-
-    characterButtons.forEach(button => {
-
-        button.classList.remove("active");
-
-    });
-
-
-    const selectedCharacter =
-        document.querySelector(
-            `.character[data-character="${characterName}"]`
-        );
-
-
-    const selectedButton =
-        document.querySelector(
-            `.character-navigation button[data-target="${characterName}"]`
-        );
-
-
-    if (selectedCharacter) {
-
-        selectedCharacter.classList.add("active");
-
-    }
-
-
-    if (selectedButton) {
-
-        selectedButton.classList.add("active");
-
-    }
-
+if (menuButton && navigation) {
+    menuButton.addEventListener("click", () => navigation.classList.toggle("open"));
 }
 
-
-characterButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const target =
-            button.dataset.target;
-
-        showCharacter(target);
-
-    });
-
+document.querySelectorAll(".navbar nav a").forEach(link => {
+    link.addEventListener("click", () => navigation?.classList.remove("open"));
 });
 
-
-showCharacter("joker");
-
-
 /* =====================================================
-   MOBILE MENU
+   CHARACTER SELECTOR
 ===================================================== */
-
-const menuButton =
-    document.getElementById("menu-button");
-
-const navigation =
-    document.querySelector(".navbar nav");
-
-
-menuButton.addEventListener(
-    "click",
-    () => {
-
-        navigation.classList.toggle("open");
-
-    }
-);
-
-
-/* =====================================================
-   CLOSE MOBILE MENU AFTER CLICK
-===================================================== */
-
-const navLinks =
-    document.querySelectorAll(".navbar nav a");
-
-
-navLinks.forEach(link => {
-
-    link.addEventListener(
-        "click",
-        () => {
-
-            navigation.classList.remove("open");
-
-        }
-    );
-
-});
-
-
-/* =====================================================
-   KEYBOARD CHARACTER CONTROL
-===================================================== */
-
-const characterNames = [
-    "joker",
-    "ryuji",
-    "ann",
-    "morgana",
-    "yusuke",
-    "makoto",
-    "futaba",
-    "haru",
-    "akechi",
-    "kasumi"
-];
-
-
+const characters = document.querySelectorAll(".character");
+const characterButtons = document.querySelectorAll(".character-navigation button");
+const characterNames = ["joker", "ryuji", "ann", "morgana", "yusuke", "makoto", "futaba", "haru", "akechi", "kasumi"];
 let currentCharacter = 0;
 
+function showCharacter(id) {
+    characters.forEach(item => item.classList.toggle("active", item.dataset.character === id));
+    characterButtons.forEach(button => button.classList.toggle("active", button.dataset.target === id));
+    const index = characterNames.indexOf(id);
+    if (index >= 0) currentCharacter = index;
+}
 
-document.addEventListener(
-    "keydown",
-    event => {
+characterButtons.forEach(button => {
+    button.addEventListener("click", () => showCharacter(button.dataset.target));
+});
 
-        if (
-            event.key !== "ArrowRight" &&
-            event.key !== "ArrowLeft"
-        ) {
+if (characters.length) showCharacter("joker");
 
-            return;
+document.addEventListener("keydown", event => {
+    if (!characters.length) return;
+    if (event.key === "ArrowRight") currentCharacter = (currentCharacter + 1) % characterNames.length;
+    else if (event.key === "ArrowLeft") currentCharacter = (currentCharacter - 1 + characterNames.length) % characterNames.length;
+    else return;
+    showCharacter(characterNames[currentCharacter]);
+});
 
-        }
+/* =====================================================
+   DATA LAYER
+   JSON files are the site's source of truth for now.
+===================================================== */
+const DATA_FILES = {
+    characters: "data/characters.json",
+    palaces: "data/palaces.json",
+    confidants: "data/confidants.json",
+    personas: "data/personas.json",
+    shadows: "data/shadows.json"
+};
 
+async function loadData(type) {
+    const file = DATA_FILES[type];
+    if (!file) throw new Error(`Unknown data type: ${type}`);
+    const response = await fetch(file);
+    if (!response.ok) throw new Error(`Could not load ${file}`);
+    return response.json();
+}
 
-        if (event.key === "ArrowRight") {
+/* =====================================================
+   DATABASE ROUTER
+   Example: database.html?type=palaces&id=kamoshida
+===================================================== */
+function getQuery() {
+    return new URLSearchParams(window.location.search);
+}
 
-            currentCharacter++;
+function createDatabaseCard(item, type) {
+    const card = document.createElement("article");
+    card.className = "p5-card";
+    card.dataset.id = item.id;
+    card.dataset.type = type;
 
-            if (
-                currentCharacter >=
-                characterNames.length
-            ) {
-
-                currentCharacter = 0;
-
-            }
-
-        }
-
-
-        if (event.key === "ArrowLeft") {
-
-            currentCharacter--;
-
-            if (currentCharacter < 0) {
-
-                currentCharacter =
-                    characterNames.length - 1;
-
-            }
-
-        }
-
-
-        showCharacter(
-            characterNames[currentCharacter]
-        );
-
+    if (type === "palaces") {
+        card.innerHTML = `<h2>${item.name}</h2><p>Location: ${item.location}</p><p>Sin: ${item.sin}</p><p>Boss: ${item.boss}</p>`;
+    } else if (type === "characters") {
+        card.innerHTML = `<h2>${item.name}</h2><p>Codename: ${item.codename}</p><p>Role: ${item.role}</p><p>Persona: ${item.persona}</p>`;
+    } else if (type === "confidants") {
+        card.innerHTML = `<h2>${item.name}</h2><p>Arcana: ${item.arcana}</p>`;
+    } else if (type === "personas") {
+        card.innerHTML = `<h2>${item.name}</h2><p>Arcana: ${item.arcana}</p><p>Level: ${item.level}</p>`;
+    } else if (type === "shadows") {
+        card.innerHTML = `<h2>${item.name}</h2><p>Persona: ${item.persona}</p><p>Arcana: ${item.arcana}</p><p>Level: ${item.level}</p>`;
     }
-);
+
+    card.addEventListener("click", () => {
+        window.location.href = `database.html?type=${encodeURIComponent(type)}&id=${encodeURIComponent(item.id)}`;
+    });
+    return card;
+}
+
+async function initializeDatabasePage() {
+    const list = document.getElementById("database-list");
+    const title = document.getElementById("database-title");
+    const status = document.getElementById("database-status");
+    if (!list || !title || !status) return;
+
+    const params = getQuery();
+    const type = params.get("type") || "characters";
+    const selectedId = params.get("id");
+
+    try {
+        const data = await loadData(type);
+        const items = data[type] || [];
+        title.textContent = type.toUpperCase();
+        list.innerHTML = "";
+
+        if (!items.length) {
+            status.textContent = "No records found.";
+            return;
+        }
+
+        if (selectedId) {
+            const selected = items.find(item => item.id === selectedId);
+            if (selected) {
+                status.textContent = `Selected record: ${selected.name}`;
+                list.appendChild(createDatabaseCard(selected, type));
+                const back = document.createElement("a");
+                back.href = `database.html?type=${encodeURIComponent(type)}`;
+                back.textContent = "← VIEW ALL";
+                list.appendChild(back);
+                return;
+            }
+        }
+
+        status.textContent = `${items.length} records loaded from JSON.`;
+        items.forEach(item => list.appendChild(createDatabaseCard(item, type)));
+    } catch (error) {
+        console.error(error);
+        status.textContent = "Database data could not be loaded.";
+    }
+}
+
+initializeDatabasePage();
