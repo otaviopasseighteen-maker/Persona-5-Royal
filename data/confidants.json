@@ -1,0 +1,13 @@
+{
+  "confidants": [
+    {"id":"fool","name":"Igor","arcana":"Fool"},
+    {"id":"magician","name":"Morgana","arcana":"Magician"},
+    {"id":"death","name":"Tae Takemi","arcana":"Death"},
+    {"id":"temperance","name":"Sadayo Kawakami","arcana":"Temperance"},
+    {"id":"fortune","name":"Chihaya Mifune","arcana":"Fortune"},
+    {"id":"sun","name":"Toranosuke Yoshida","arcana":"Sun"},
+    {"id":"moon","name":"Yuuki Mishima","arcana":"Moon"},
+    {"id":"star","name":"Hifumi Togo","arcana":"Star"},
+    {"id":"councillor","name":"Takuto Maruki","arcana":"Councillor"}
+  ]
+}
