@@ -1,0 +1,14 @@
+{
+  "characters": [
+    {"id":"joker","name":"Joker","codename":"Joker","role":"Phantom Thief","persona":"Arsene"},
+    {"id":"ryuji","name":"Ryuji Sakamoto","codename":"Skull","role":"Phantom Thief","persona":"Captain Kidd"},
+    {"id":"ann","name":"Ann Takamaki","codename":"Panther","role":"Phantom Thief","persona":"Carmen"},
+    {"id":"morgana","name":"Morgana","codename":"Mona","role":"Phantom Thief","persona":"Zorro"},
+    {"id":"yusuke","name":"Yusuke Kitagawa","codename":"Fox","role":"Phantom Thief","persona":"Goemon"},
+    {"id":"makoto","name":"Makoto Niijima","codename":"Queen","role":"Phantom Thief","persona":"Johanna"},
+    {"id":"futaba","name":"Futaba Sakura","codename":"Navi","role":"Phantom Thief","persona":"Necronomicon"},
+    {"id":"haru","name":"Haru Okumura","codename":"Noir","role":"Phantom Thief","persona":"Milady"},
+    {"id":"akechi","name":"Goro Akechi","codename":"Crow","role":"Detective / Phantom Thief","persona":"Robin Hood"},
+    {"id":"kasumi","name":"Kasumi Yoshizawa","codename":"Violet","role":"Phantom Thief","persona":"Cendrillon"}
+  ]
+}
