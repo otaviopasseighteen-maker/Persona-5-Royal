@@ -1,8 +1,0 @@
-{
-  "shadows": [
-    {"id":"mandrake","name":"Mandrake","persona":"Mandrake","arcana":"Death","level":3},
-    {"id":"agathion","name":"Agathion","persona":"Agathion","arcana":"Chariot","level":3},
-    {"id":"pixie","name":"Pixie","persona":"Pixie","arcana":"Lovers","level":2},
-    {"id":"jack-o-lantern","name":"Jack-o'-Lantern","persona":"Jack-o'-Lantern","arcana":"Magician","level":2}
-  ]
-}
