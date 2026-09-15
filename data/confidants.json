@@ -1,142 +1,25 @@
 [
-  {
-    "id": "igor",
-    "name": "Igor",
-    "arcana": "Fool",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "morgana",
-    "name": "Morgana",
-    "arcana": "Magician",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "makoto-nijima",
-    "name": "Makoto Niijima",
-    "arcana": "Priestess",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "yusuke-kitagawa",
-    "name": "Yusuke Kitagawa",
-    "arcana": "Emperor",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "sojiro-sakura",
-    "name": "Sojiro Sakura",
-    "arcana": "Hierophant",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "ann-takamaki",
-    "name": "Ann Takamaki",
-    "arcana": "Lovers",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "ryuji-sakamoto",
-    "name": "Ryuji Sakamoto",
-    "arcana": "Chariot",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "goro-akechi",
-    "name": "Goro Akechi",
-    "arcana": "Justice",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "futaba-sakura",
-    "name": "Futaba Sakura",
-    "arcana": "Hermit",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "haru-okumura",
-    "name": "Haru Okumura",
-    "arcana": "Empress",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "sadayo-kawakami",
-    "name": "Sadayo Kawakami",
-    "arcana": "Temperance",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "toranosuke-yoshida",
-    "name": "Toranosuke Yoshida",
-    "arcana": "Sun",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8]
-  },
-  {
-    "id": "ichiko-ohya",
-    "name": "Ichiko Ohya",
-    "arcana": "Devil",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "chihaya-mifune",
-    "name": "Chihaya Mifune",
-    "arcana": "Fortune",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "munehisa-iwai",
-    "name": "Munehisa Iwai",
-    "arcana": "Hanged Man",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "sadayo-kawakami",
-    "name": "Sadayo Kawakami",
-    "arcana": "Temperance",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "takuto-maruki",
-    "name": "Takuto Maruki",
-    "arcana": "Councillor",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "kasumi-yoshizawa",
-    "name": "Kasumi Yoshizawa",
-    "arcana": "Faith",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5]
-  },
-  {
-    "id": "caroline-justine",
-    "name": "Caroline & Justine",
-    "arcana": "Strength",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  },
-  {
-    "id": "sae-nijima",
-    "name": "Sae Niijima",
-    "arcana": "Judgement",
-    "type": "Confidant",
-    "ranks": [1,2,3,4,5,6,7,8,9,10]
-  }
+  {"id":"igor","name":"Igor","arcana":"Fool","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"morgana","name":"Morgana","arcana":"Magician","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"makoto-nijima","name":"Makoto Niijima","arcana":"Priestess","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"haru-okumura","name":"Haru Okumura","arcana":"Empress","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"yusuke-kitagawa","name":"Yusuke Kitagawa","arcana":"Emperor","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"sojiro-sakura","name":"Sojiro Sakura","arcana":"Hierophant","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"ann-takamaki","name":"Ann Takamaki","arcana":"Lovers","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"ryuji-sakamoto","name":"Ryuji Sakamoto","arcana":"Chariot","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"goro-akechi","name":"Goro Akechi","arcana":"Justice","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"futaba-sakura","name":"Futaba Sakura","arcana":"Hermit","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"chihaya-mifune","name":"Chihaya Mifune","arcana":"Fortune","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"munehisa-iwai","name":"Munehisa Iwai","arcana":"Hanged Man","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"tae-takemi","name":"Tae Takemi","arcana":"Death","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"sadayo-kawakami","name":"Sadayo Kawakami","arcana":"Temperance","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"ichiko-ohya","name":"Ichiko Ohya","arcana":"Devil","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"shinya-oda","name":"Shinya Oda","arcana":"Tower","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"hifumi-togo","name":"Hifumi Togo","arcana":"Star","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"yuuki-mishima","name":"Yuuki Mishima","arcana":"Moon","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"toranosuke-yoshida","name":"Toranosuke Yoshida","arcana":"Sun","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"caroline-justine","name":"Caroline & Justine","arcana":"Strength","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"sae-nijima","name":"Sae Niijima","arcana":"Judgement","type":"Story Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"takuto-maruki","name":"Takuto Maruki","arcana":"Councillor","type":"Confidant","ranks":[1,2,3,4,5,6,7,8,9,10]},
+  {"id":"kasumi-yoshizawa","name":"Kasumi Yoshizawa","arcana":"Faith","type":"Confidant","ranks":[1,2,3,4,5]}
 ]
