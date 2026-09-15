@@ -1,0 +1,9 @@
+/* Foundation only. Visual design comes after the internal structure is stable. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; }
+main { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+#site-navigation { border-bottom: 1px solid #ccc; padding: 1rem 2rem; }
+#site-navigation a { margin-right: 1rem; }
+a { text-decoration: none; }
+.entity-list { display: grid; gap: .75rem; }
+.entity-link { padding: .75rem; border: 1px solid #ccc; }
