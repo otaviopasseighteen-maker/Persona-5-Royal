@@ -1,0 +1,9 @@
+{
+  "personas": [
+    {"id":"arsene","name":"Arsene","arcana":"Fool","level":1},
+    {"id":"pixie","name":"Pixie","arcana":"Lovers","level":2},
+    {"id":"jack-o-lantern","name":"Jack-o'-Lantern","arcana":"Magician","level":2},
+    {"id":"mandrake","name":"Mandrake","arcana":"Death","level":3},
+    {"id":"agathion","name":"Agathion","arcana":"Chariot","level":3}
+  ]
+}
