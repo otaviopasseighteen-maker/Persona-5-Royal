@@ -3,9 +3,6 @@
    Data-driven navigation + page interactions
 ===================================================== */
 
-/* =====================================================
-   LOADING / INTRO
-===================================================== */
 const loadingScreen = document.getElementById("loading-screen");
 const loadingProgress = document.getElementById("loading-progress");
 const loadingText = document.getElementById("loading-text");
@@ -16,21 +13,11 @@ const skipTrailer = document.getElementById("skip-trailer");
 if (loadingScreen && loadingProgress && loadingText) {
     document.body.classList.add("loading");
     let progress = 0;
-    const messages = [
-        "INITIALIZING METAVERSE...",
-        "LOADING PHANTOM THIEVES...",
-        "ACCESSING PALACES...",
-        "SYNCHRONIZING PERSONAS...",
-        "PREPARING TOKYO...",
-        "WELCOME, PHANTOM THIEF."
-    ];
-
+    const messages = ["INITIALIZING METAVERSE...", "LOADING PHANTOM THIEVES...", "ACCESSING PALACES...", "SYNCHRONIZING PERSONAS...", "PREPARING TOKYO...", "WELCOME, PHANTOM THIEF."];
     const interval = setInterval(() => {
         progress = Math.min(100, progress + Math.floor(Math.random() * 8) + 3);
         loadingProgress.style.width = `${progress}%`;
-        const index = Math.min(messages.length - 1, Math.floor((progress / 100) * (messages.length - 1)));
-        loadingText.textContent = messages[index];
-
+        loadingText.textContent = messages[Math.min(messages.length - 1, Math.floor((progress / 100) * (messages.length - 1)))];
         if (progress >= 100) {
             clearInterval(interval);
             setTimeout(() => {
@@ -51,22 +38,15 @@ function closeTrailer() {
         if (mainSite) mainSite.classList.add("visible");
     }, 700);
 }
-
 if (skipTrailer) skipTrailer.addEventListener("click", closeTrailer);
 
 /* =====================================================
-   MOBILE NAVIGATION
+   SITE NAVIGATION
 ===================================================== */
 const menuButton = document.getElementById("menu-button");
 const navigation = document.querySelector(".navbar nav");
-
-if (menuButton && navigation) {
-    menuButton.addEventListener("click", () => navigation.classList.toggle("open"));
-}
-
-document.querySelectorAll(".navbar nav a").forEach(link => {
-    link.addEventListener("click", () => navigation?.classList.remove("open"));
-});
+if (menuButton && navigation) menuButton.addEventListener("click", () => navigation.classList.toggle("open"));
+document.querySelectorAll(".navbar nav a").forEach(link => link.addEventListener("click", () => navigation?.classList.remove("open")));
 
 /* =====================================================
    CHARACTER SELECTOR
@@ -75,20 +55,14 @@ const characters = document.querySelectorAll(".character");
 const characterButtons = document.querySelectorAll(".character-navigation button");
 const characterNames = ["joker", "ryuji", "ann", "morgana", "yusuke", "makoto", "futaba", "haru", "akechi", "kasumi"];
 let currentCharacter = 0;
-
 function showCharacter(id) {
     characters.forEach(item => item.classList.toggle("active", item.dataset.character === id));
     characterButtons.forEach(button => button.classList.toggle("active", button.dataset.target === id));
     const index = characterNames.indexOf(id);
     if (index >= 0) currentCharacter = index;
 }
-
-characterButtons.forEach(button => {
-    button.addEventListener("click", () => showCharacter(button.dataset.target));
-});
-
+characterButtons.forEach(button => button.addEventListener("click", () => showCharacter(button.dataset.target)));
 if (characters.length) showCharacter("joker");
-
 document.addEventListener("keydown", event => {
     if (!characters.length) return;
     if (event.key === "ArrowRight") currentCharacter = (currentCharacter + 1) % characterNames.length;
@@ -98,8 +72,7 @@ document.addEventListener("keydown", event => {
 });
 
 /* =====================================================
-   DATA LAYER
-   JSON files are the site's source of truth for now.
+   DATA LAYER — JSON IS THE SOURCE OF TRUTH FOR NOW
 ===================================================== */
 const DATA_FILES = {
     characters: "data/characters.json",
@@ -119,33 +92,19 @@ async function loadData(type) {
 
 /* =====================================================
    DATABASE ROUTER
-   Example: database.html?type=palaces&id=kamoshida
+   database.html?type=palaces&id=kamoshida
 ===================================================== */
-function getQuery() {
-    return new URLSearchParams(window.location.search);
-}
-
 function createDatabaseCard(item, type) {
     const card = document.createElement("article");
     card.className = "p5-card";
     card.dataset.id = item.id;
     card.dataset.type = type;
-
-    if (type === "palaces") {
-        card.innerHTML = `<h2>${item.name}</h2><p>Location: ${item.location}</p><p>Sin: ${item.sin}</p><p>Boss: ${item.boss}</p>`;
-    } else if (type === "characters") {
-        card.innerHTML = `<h2>${item.name}</h2><p>Codename: ${item.codename}</p><p>Role: ${item.role}</p><p>Persona: ${item.persona}</p>`;
-    } else if (type === "confidants") {
-        card.innerHTML = `<h2>${item.name}</h2><p>Arcana: ${item.arcana}</p>`;
-    } else if (type === "personas") {
-        card.innerHTML = `<h2>${item.name}</h2><p>Arcana: ${item.arcana}</p><p>Level: ${item.level}</p>`;
-    } else if (type === "shadows") {
-        card.innerHTML = `<h2>${item.name}</h2><p>Persona: ${item.persona}</p><p>Arcana: ${item.arcana}</p><p>Level: ${item.level}</p>`;
-    }
-
-    card.addEventListener("click", () => {
-        window.location.href = `database.html?type=${encodeURIComponent(type)}&id=${encodeURIComponent(item.id)}`;
-    });
+    if (type === "palaces") card.innerHTML = `<h2>${item.name}</h2><p>Location: ${item.location}</p><p>Sin: ${item.sin}</p><p>Boss: ${item.boss}</p>`;
+    if (type === "characters") card.innerHTML = `<h2>${item.name}</h2><p>Codename: ${item.codename}</p><p>Role: ${item.role}</p><p>Persona: ${item.persona}</p>`;
+    if (type === "confidants") card.innerHTML = `<h2>${item.name}</h2><p>Arcana: ${item.arcana}</p>`;
+    if (type === "personas") card.innerHTML = `<h2>${item.name}</h2><p>Arcana: ${item.arcana}</p><p>Level: ${item.level}</p>`;
+    if (type === "shadows") card.innerHTML = `<h2>${item.name}</h2><p>Persona: ${item.persona}</p><p>Arcana: ${item.arcana}</p><p>Level: ${item.level}</p>`;
+    card.addEventListener("click", () => window.location.href = `database.html?type=${encodeURIComponent(type)}&id=${encodeURIComponent(item.id)}`);
     return card;
 }
 
@@ -154,22 +113,15 @@ async function initializeDatabasePage() {
     const title = document.getElementById("database-title");
     const status = document.getElementById("database-status");
     if (!list || !title || !status) return;
-
-    const params = getQuery();
+    const params = new URLSearchParams(window.location.search);
     const type = params.get("type") || "characters";
     const selectedId = params.get("id");
-
     try {
         const data = await loadData(type);
         const items = data[type] || [];
         title.textContent = type.toUpperCase();
         list.innerHTML = "";
-
-        if (!items.length) {
-            status.textContent = "No records found.";
-            return;
-        }
-
+        if (!items.length) { status.textContent = "No records found."; return; }
         if (selectedId) {
             const selected = items.find(item => item.id === selectedId);
             if (selected) {
@@ -182,7 +134,6 @@ async function initializeDatabasePage() {
                 return;
             }
         }
-
         status.textContent = `${items.length} records loaded from JSON.`;
         items.forEach(item => list.appendChild(createDatabaseCard(item, type)));
     } catch (error) {
@@ -190,5 +141,33 @@ async function initializeDatabasePage() {
         status.textContent = "Database data could not be loaded.";
     }
 }
+
+/* =====================================================
+   HOMEPAGE → DATABASE CONNECTIONS
+===================================================== */
+const databaseLinks = {
+    palaces: "database.html?type=palaces",
+    confidants: "database.html?type=confidants",
+    characters: "database.html?type=characters"
+};
+
+const palaceCards = document.querySelectorAll("#palaces .p5-card");
+palaceCards.forEach((card, index) => {
+    const ids = ["kamoshida", "madarame", "kaneshiro", "futaba", "okumura", "shido"];
+    if (ids[index]) {
+        card.style.cursor = "pointer";
+        card.addEventListener("click", () => window.location.href = `database.html?type=palaces&id=${ids[index]}`);
+    }
+});
+
+document.querySelectorAll("#confidants .p5-card").forEach(card => {
+    card.style.cursor = "pointer";
+    card.addEventListener("click", () => window.location.href = databaseLinks.confidants);
+});
+
+document.querySelectorAll(".hero-buttons a").forEach(link => {
+    if (link.textContent.includes("ENTER THE DATABASE")) link.href = databaseLinks.characters;
+    if (link.textContent.includes("EXPLORE PALACES")) link.href = databaseLinks.palaces;
+});
 
 initializeDatabasePage();
