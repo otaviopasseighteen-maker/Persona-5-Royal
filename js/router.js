@@ -30,15 +30,21 @@ function renderConfidants(data) {
       return `<h1>Confidants</h1><p>Confidant not found.</p><a href="confidants.html">Back to Confidants</a>`;
     }
 
-    const ranks = confidant.ranks.map(rank => `
-      <details class="rank-up">
-        <summary>Rank ${rank.rank}</summary>
-        <div class="rank-content">
-          <p><strong>${rank.ability ? escapeHtml(rank.ability) : 'No new ability'}</strong></p>
-          <p>${escapeHtml(rank.effect)}</p>
-        </div>
-      </details>
-    `).join('');
+    const ranks = (confidant.ranks ?? []).map((rank, index) => {
+      const rankNumber = rank.rank ?? index + 1;
+      const ability = rank.ability || 'No new ability';
+      const effect = rank.effect || 'No effect information available.';
+
+      return `
+        <details class="rank-up">
+          <summary>Rank ${escapeHtml(rankNumber)}</summary>
+          <div class="rank-content">
+            <p><strong>${escapeHtml(ability)}</strong></p>
+            <p>${escapeHtml(effect)}</p>
+          </div>
+        </details>
+      `;
+    }).join('');
 
     return `
       <a href="confidants.html">← All Confidants</a>
