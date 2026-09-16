@@ -12,7 +12,7 @@ const pageMap = {
 };
 
 function escapeHtml(value) {
-  return String(value)
+  return String(value ?? '')
     .replaceAll('&', '&amp;')
     .replaceAll('<', '&lt;')
     .replaceAll('>', '&gt;')
@@ -32,9 +32,10 @@ function renderConfidants(data) {
 
     const ranks = confidant.ranks.map(rank => `
       <details class="rank-up">
-        <summary>Rank ${rank}</summary>
+        <summary>Rank ${rank.rank}</summary>
         <div class="rank-content">
-          <p>Rank ${rank} information will be added here.</p>
+          <p><strong>${rank.ability ? escapeHtml(rank.ability) : 'No new ability'}</strong></p>
+          <p>${escapeHtml(rank.effect)}</p>
         </div>
       </details>
     `).join('');
