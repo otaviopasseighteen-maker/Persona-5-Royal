@@ -1,1 +1,25 @@
-[]
+[
+  {"month":"April","days":[
+    {"date":"4/9","label":"Sat","slots":[{"period":"Story","text":"Follow the opening sequence and arrive at Leblanc. This is a story-controlled day."}]},
+    {"date":"4/10","label":"Sun","slots":[{"period":"Story","text":"Continue the opening events and investigate the mysterious app."}]},
+    {"date":"4/11","label":"Mon","slots":[{"period":"School","text":"Attend school and continue the Kamoshida storyline."},{"period":"After School","text":"Follow the story into the Metaverse and begin the first Palace sequence."}]},
+    {"date":"4/12","label":"Tue","slots":[{"period":"Day","text":"Continue the Kamoshida Palace introduction and learn the basic infiltration mechanics."}]}
+  ]},
+  {"month":"May","days":[
+    {"date":"5/1","label":"Sun","slots":[{"period":"Daytime","text":"Buy Vitality Aojiru at the Shibuya drink stand. If available, prepare Bio Nutrients for the plant and work at Triple Seven."},{"period":"Evening","text":"Visit the Yongen-Jaya bathhouse for a Charm boost."}]},
+    {"date":"5/2","label":"Mon","slots":[{"period":"Daytime","text":"Kamoshida aftermath and story events."},{"period":"Evening","text":"Complete the crossword, then work on Infiltration Tools to build Proficiency."}]},
+    {"date":"5/3","label":"Tue","slots":[{"period":"Daytime","text":"Story events."},{"period":"Evening","text":"Study at Leblanc to improve Knowledge."}]},
+    {"date":"5/4","label":"Wed","slots":[{"period":"Daytime","text":"Story events."},{"period":"Evening","text":"Study at Leblanc again."}]},
+    {"date":"5/5","label":"Thu","slots":[{"period":"Daytime","text":"The Phantom Thieves are formally established."},{"period":"Evening","text":"Use Bio Nutrients on the plant. Clean Leblanc when available and continue the Fool Confidant progression."}]},
+    {"date":"5/6","label":"Fri","slots":[{"period":"Morning","text":"Class lecture; take the chalk-dodge opportunity if desired."},{"period":"After School","text":"Spend time with Ann. Lovers Rank 2 becomes available with the required Kindness."},{"period":"Evening","text":"Apply for and work at the beef bowl shop if the required Proficiency is met."}]},
+    {"date":"5/7","label":"Sat","slots":[{"period":"Morning","text":"Answer the classroom question."},{"period":"Metaverse","text":"A Mementos request becomes available; complete it if following the schedule."},{"period":"Evening","text":"Use the work desk to craft infiltration tools and raise Proficiency."}]},
+    {"date":"5/8","label":"Sun","slots":[{"period":"Daytime","text":"Mishima's Moon Confidant progresses automatically."},{"period":"Evening","text":"Use the shopping program if useful, then improve Guts with the Shibuya drink stand or follow the planned activity."}]}
+  ]},
+  {"month":"June","days":[
+    {"date":"6/1","label":"Wed","slots":[{"period":"After School","text":"Spend time with Ryuji and progress Chariot Rank 7 → 8. Keep a Chariot Persona available for the most efficient affinity gains."},{"period":"Evening","text":"Study at the diner and order the Surprise Sando for additional Knowledge and Guts."}]},
+    {"date":"6/2","label":"Thu","slots":[{"period":"After School","text":"Spend time with Takemi and progress Death Rank 5 → 6. Keep a Death Persona available."},{"period":"Evening","text":"Check the TV quiz, then spend time with Sojiro for Hierophant Rank 3 → 4 if following this route."}]},
+    {"date":"6/3","label":"Fri","slots":[{"period":"Morning","text":"Read Buchiko's Story on the train."},{"period":"Class","text":"Continue the book during class when permitted to finish it and gain Kindness."},{"period":"After School","text":"Progress Ann's Lovers Confidant."},{"period":"Evening","text":"Complete the crossword and progress Kawakami's Temperance Confidant when available."}]},
+    {"date":"6/4","label":"Sat","slots":[{"period":"Morning","text":"Answer the classroom question."},{"period":"After School","text":"Follow the planned Confidant or Social Stat activity for the route."}]},
+    {"date":"6/5","label":"Sun","slots":[{"period":"Daytime","text":"Use the available Sunday activity to continue the schedule's Social Stat or Confidant progression."},{"period":"Evening","text":"Use the evening slot for the route's planned activity and prepare for the following week."}]}
+  ]}
+]
