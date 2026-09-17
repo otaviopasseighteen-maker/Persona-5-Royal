@@ -1,7 +1,6 @@
 const sections = [
   ['Characters', 'characters'], ['Personas', 'personas'], ['Shadows', 'shadows'],
-  ['Palaces', 'palaces'], ['Confidants', 'confidants'], ['Skills', 'skills'],
-  ['Items', 'items'], ['Guide', 'guide']
+  ['Palaces', 'palaces'], ['Confidants', 'confidants']
 ];
 
 export function renderHome(target) {
