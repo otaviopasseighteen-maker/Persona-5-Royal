@@ -1,4 +1,4 @@
-import { loadCollection } from './data.js?v=p5r-modules-20260917-3';
+import { loadCollection } from './data.js?v=p5r-modules-20260917-4';
 
 const pageMap = {
   characters: 'characters',
@@ -66,9 +66,10 @@ function renderCharacterDetail(character) {
   return `<div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../characters.html">Characters</a> <span>›</span> <strong>${escapeHtml(character.name)}</strong></div><article class="character-detail"><h1>${escapeHtml(character.name)}</h1><p><strong>Real Name:</strong> ${escapeHtml(character.realName || character.name)}</p><p><strong>Age:</strong> ${escapeHtml(character.age)}</p><p><strong>Role:</strong> ${escapeHtml(character.role)}</p><p><strong>Arcana:</strong> ${escapeHtml(character.arcana)}</p><p><strong>Birthday:</strong> ${escapeHtml(character.birthday)}</p><p><strong>Occupation:</strong> ${escapeHtml(character.occupation)}</p><p><strong>Affiliation:</strong> ${escapeHtml(character.affiliation)}</p><section><h2>Biography</h2><p>${escapeHtml(character.bio)}</p></section>${character.personaId ? `<section class="character-persona-link"><h2>Persona</h2><a href="${personaPage}">${escapeHtml(character.personaName)}</a><p>${escapeHtml(character.personaRole)}</p></section>` : ''}</article>`;
 }
 
-function renderPersonaForm(persona, form) {
+function renderPersonaForm(persona, form, index) {
   if (!form) return '<p>No form data available.</p>';
-  return `<div class="persona-form-detail"><div class="persona-form-stage">${escapeHtml(form.stage)}</div><h3>${escapeHtml(form.name)}</h3><p><strong>Arcana:</strong> ${escapeHtml(persona.arcana)}</p><p><strong>Level:</strong> ${form.level == null ? '—' : `Lv. ${escapeHtml(form.level)}`}</p></div>`;
+  const stageNumber = index + 1;
+  return `<section class="persona-form-detail" data-form-stage="${stageNumber}"><div class="persona-form-stage">Evolution ${stageNumber} · ${escapeHtml(form.stage)}</div><h2>${escapeHtml(form.name)}</h2><dl><dt>Arcana</dt><dd>${escapeHtml(persona.arcana)}</dd><dt>Level</dt><dd>${form.level == null ? '—' : `Lv. ${escapeHtml(form.level)}`}</dd></dl></section>`;
 }
 
 function renderPersonas(data) {
@@ -81,8 +82,8 @@ function renderPersonas(data) {
 function renderPersonaDetail(persona) {
   const forms = persona.forms ?? [];
   const initial = forms[0];
-  const buttons = forms.map((form, index) => `<button class="persona-form-button${index === 0 ? ' active' : ''}" type="button" data-persona-detail-form-index="${index}">${escapeHtml(form.name)}</button>`).join('');
-  return `<div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../personas.html">Personas</a> <span>›</span> <strong>${escapeHtml(persona.name)}</strong></div><article class="persona-detail" data-persona-detail-id="${escapeHtml(persona.id)}"><h1 data-persona-detail-title>${escapeHtml(initial?.name || persona.name)}</h1><p><strong>Arcana:</strong> ${escapeHtml(persona.arcana)}</p><p><strong>Character:</strong> <a href="../characters/${encodeURIComponent(persona.characterId)}.html">${escapeHtml(persona.character)}</a></p><div class="persona-form-selector">${buttons}</div><div class="persona-selected-form" data-persona-detail-display>${renderPersonaForm(persona, initial)}</div></article>`;
+  const buttons = forms.map((form, index) => `<button class="persona-form-button${index === 0 ? ' active' : ''}" type="button" data-persona-detail-form-index="${index}" aria-label="View ${escapeHtml(form.name)}"><span>Evolution ${index + 1}</span><strong>${escapeHtml(form.name)}</strong><small>${escapeHtml(form.stage)}</small></button>`).join('');
+  return `<div class="breadcrumb"><a href="../../index.html">Home</a> <span>›</span> <a href="../personas.html">Personas</a> <span>›</span> <strong>${escapeHtml(persona.name)}</strong></div><article class="persona-detail" data-persona-detail-id="${escapeHtml(persona.id)}"><header class="persona-header"><p>Party Persona</p><h1 data-persona-detail-title>${escapeHtml(initial?.name || persona.name)}</h1><p><strong>Arcana:</strong> ${escapeHtml(persona.arcana)}</p><p><strong>Character:</strong> <a href="../characters/${encodeURIComponent(persona.characterId)}.html">${escapeHtml(persona.character)}</a></p></header><section class="persona-evolution-section"><h2>Evolution Path</h2><div class="persona-form-selector" role="tablist" aria-label="${escapeHtml(persona.name)} evolution path">${buttons}</div><div class="persona-selected-form" data-persona-detail-display>${renderPersonaForm(persona, initial, 0)}</div></section></article>`;
 }
 
 function setupPersonaInteractions(target, data) {
@@ -97,7 +98,7 @@ function setupPersonaInteractions(target, data) {
       const form = forms[index];
       if (!form || !display) return;
       card.querySelectorAll('[data-persona-detail-form-index]').forEach((item, itemIndex) => item.classList.toggle('active', itemIndex === index));
-      display.innerHTML = renderPersonaForm(persona, form);
+      display.innerHTML = renderPersonaForm(persona, form, index);
       if (title) title.textContent = form.name;
     }));
   });
