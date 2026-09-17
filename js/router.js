@@ -20,51 +20,72 @@ function escapeHtml(value) {
     .replaceAll("'", '&#039;');
 }
 
+function renderRankBox(rank) {
+  const ability = rank?.ability || 'No new ability';
+  const effect = rank?.effect || 'No effect information available.';
+  return `
+    <div class="rank-content">
+      <div class="rank-label">Rank ${escapeHtml(rank?.rank ?? '')}</div>
+      <p><strong>${escapeHtml(ability)}</strong></p>
+      <p>${escapeHtml(effect)}</p>
+    </div>
+  `;
+}
+
 function renderConfidants(data) {
-  const params = new URLSearchParams(window.location.search);
-  const selectedId = params.get('id');
-
-  if (selectedId) {
-    const confidant = data.find(item => item.id === selectedId);
-    if (!confidant) {
-      return `<h1>Confidants</h1><p>Confidant not found.</p><a href="confidants.html">Back to Confidants</a>`;
-    }
-
-    const ranks = (confidant.ranks ?? []).map((rank, index) => {
-      const rankNumber = rank.rank ?? index + 1;
-      const ability = rank.ability || 'No new ability';
-      const effect = rank.effect || 'No effect information available.';
-
-      return `
-        <details class="rank-up">
-          <summary>Rank ${escapeHtml(rankNumber)}</summary>
-          <div class="rank-content">
-            <p><strong>${escapeHtml(ability)}</strong></p>
-            <p>${escapeHtml(effect)}</p>
-          </div>
-        </details>
-      `;
-    }).join('');
+  const cards = data.map((confidant, confidantIndex) => {
+    const ranks = confidant.ranks ?? [];
+    const firstRank = ranks[0] ?? { rank: 1, ability: null, effect: 'No rank data available.' };
+    const stars = ranks.map((rank, index) => `
+      <button class="rank-star${index === 0 ? ' active' : ''}" type="button"
+        data-confidant="${confidantIndex}" data-rank-index="${index}"
+        aria-label="${escapeHtml(confidant.name)} Rank ${escapeHtml(rank.rank ?? index + 1)}">
+        ★
+      </button>
+    `).join('');
 
     return `
-      <a href="confidants.html">← All Confidants</a>
-      <h1>${escapeHtml(confidant.name)}</h1>
-      <p><strong>Arcana:</strong> ${escapeHtml(confidant.arcana)}</p>
-      <section class="rank-list">
-        <h2>Rank-Up</h2>
-        ${ranks}
+      <section class="confidant-rank-card" data-confidant-card="${confidantIndex}">
+        <header class="confidant-heading">
+          <h2>${escapeHtml(confidant.name)}</h2>
+          <p><strong>Arcana:</strong> ${escapeHtml(confidant.arcana)}</p>
+        </header>
+        <div class="rank-progress" role="group" aria-label="${escapeHtml(confidant.name)} Rank progression">
+          ${stars}
+        </div>
+        <div class="selected-rank" data-rank-display="${confidantIndex}">
+          ${renderRankBox(firstRank)}
+        </div>
       </section>
     `;
-  }
+  }).join('');
 
-  const cards = data.map(confidant => `
-    <a class="entity-link" href="confidants.html?id=${encodeURIComponent(confidant.id)}">
-      <strong>${escapeHtml(confidant.name)}</strong>
-      <span>${escapeHtml(confidant.arcana)}</span>
-    </a>
-  `).join('');
+  return `
+    <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <span>Confidants</span> <span>›</span> <strong>Rank-Up List</strong></div>
+    <h1>Confidant Rank-Up List</h1>
+    <p>Select a star to view the ability and effect for that Rank.</p>
+    <div class="confidant-rank-list">${cards}</div>
+  `;
+}
 
-  return `<h1>Confidants</h1><div class="entity-list">${cards}</div>`;
+function setupConfidantInteractions(target, data) {
+  target.querySelectorAll('.rank-star').forEach(button => {
+    button.addEventListener('click', () => {
+      const confidantIndex = Number(button.dataset.confidant);
+      const rankIndex = Number(button.dataset.rankIndex);
+      const card = target.querySelector(`[data-confidant-card="${confidantIndex}"]`);
+      const display = target.querySelector(`[data-rank-display="${confidantIndex}"]`);
+      const ranks = data[confidantIndex]?.ranks ?? [];
+      const rank = ranks[rankIndex];
+      if (!card || !display || !rank) return;
+
+      card.querySelectorAll('.rank-star').forEach((star, index) => {
+        star.classList.toggle('active', index <= rankIndex);
+      });
+
+      display.innerHTML = renderRankBox(rank);
+    });
+  });
 }
 
 export async function renderPage(page, target) {
@@ -77,6 +98,7 @@ export async function renderPage(page, target) {
 
     if (page === 'confidants') {
       target.innerHTML = renderConfidants(data);
+      setupConfidantInteractions(target, data);
       return;
     }
 
