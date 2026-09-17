@@ -1,6 +1,6 @@
-import { renderNavigation } from './navigation.js';
-import { renderHome } from './components.js';
-import { renderPage } from './router.js';
+import { renderNavigation } from './navigation.js?v=p5r-modules-20260917-3';
+import { renderHome } from './components.js?v=p5r-modules-20260917-3';
+import { renderPage } from './router.js?v=p5r-modules-20260917-3';
 
 const page = document.body.dataset.page;
 renderNavigation(document.querySelector('#site-navigation'));
