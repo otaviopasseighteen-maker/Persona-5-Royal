@@ -88,6 +88,41 @@ function setupConfidantInteractions(target, data) {
   });
 }
 
+function renderPersonas(data) {
+  const cards = data.map(persona => {
+    const forms = (persona.forms ?? []).map(form => `
+      <div class="persona-form">
+        <div class="persona-form-stage">${escapeHtml(form.stage)}</div>
+        <div class="persona-form-name">${escapeHtml(form.name)}</div>
+        <div class="persona-form-level">${form.level == null ? '—' : `Lv. ${escapeHtml(form.level)}`}</div>
+      </div>
+    `).join('');
+
+    return `
+      <article class="persona-card">
+        <header class="persona-heading">
+          <div>
+            <h2>${escapeHtml(persona.name)}</h2>
+            <p><strong>Arcana:</strong> ${escapeHtml(persona.arcana)}</p>
+            <p><strong>Character:</strong> ${escapeHtml(persona.character)}</p>
+          </div>
+          <span class="persona-type">${escapeHtml(persona.type)}</span>
+        </header>
+        <div class="persona-evolution">
+          ${forms}
+        </div>
+      </article>
+    `;
+  }).join('');
+
+  return `
+    <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <strong>Personas</strong></div>
+    <h1>Main Personas</h1>
+    <p>Initial Personas and their Royal evolution forms.</p>
+    <div class="persona-list">${cards}</div>
+  `;
+}
+
 export async function renderPage(page, target) {
   if (!target || !pageMap[page]) return;
 
@@ -99,6 +134,11 @@ export async function renderPage(page, target) {
     if (page === 'confidants') {
       target.innerHTML = renderConfidants(data);
       setupConfidantInteractions(target, data);
+      return;
+    }
+
+    if (page === 'personas') {
+      target.innerHTML = renderPersonas(data);
       return;
     }
 
