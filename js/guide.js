@@ -1,5 +1,5 @@
-const DATA_URL = '../data/guide.json?v=p5r-guide-20260917-2';
-const STORAGE_KEY = 'p5r-guide-completed-v1';
+const DATA_URL = '../data/guide.json?v=p5r-guide-20260917-3';
+const STORAGE_KEY = 'p5r-guide-completed-v2';
 
 const state = { data: [], monthIndex: 0, dayIndex: 0, completed: new Set() };
 
@@ -40,11 +40,33 @@ function renderDayList(month) {
   }).join('');
 }
 
+function activityList(slot) {
+  const activities = Array.isArray(slot.activities) ? slot.activities : (slot.text ? [slot.text] : []);
+  return `<ul class="guide-activities">${activities.map(activity => `<li>${escapeHtml(activity)}</li>`).join('')}</ul>`;
+}
+
+function slotGroup(slot) {
+  const period = String(slot.period || 'Activity');
+  const lower = period.toLowerCase();
+  return lower.includes('evening') || lower.includes('night') ? 'night' : 'day';
+}
+
+function renderSlot(slot) {
+  return `<section class="guide-schedule-slot ${slotGroup(slot)}"><h3>${escapeHtml(slot.period)}</h3>${activityList(slot)}</section>`;
+}
+
+function renderScheduleColumn(title, slots) {
+  if (!slots.length) return `<section class="guide-schedule-column"><h3>${title}</h3><p class="guide-empty">No scheduled activity.</p></section>`;
+  return `<section class="guide-schedule-column"><h3>${title}</h3>${slots.map(renderSlot).join('')}</section>`;
+}
+
 function renderDay(month, day) {
   if (!day) return '<p>No guide data available for this date.</p>';
   const done = state.completed.has(dayKey(month, day));
-  const slots = (day.slots || []).map(slot => `<section class="guide-slot"><h3>${escapeHtml(slot.period)}</h3><p>${escapeHtml(slot.text)}</p></section>`).join('');
-  return `<article class="guide-day-detail"><header><p>${escapeHtml(month.month)}</p><h2>${escapeHtml(day.date)} — ${escapeHtml(day.label)}</h2></header><div class="guide-day-actions"><button type="button" data-guide-complete>${done ? '✓ Day Completed' : 'Mark Day Complete'}</button></div><div class="guide-slots">${slots}</div></article>`;
+  const slots = day.slots || [];
+  const daySlots = slots.filter(slot => slotGroup(slot) === 'day');
+  const nightSlots = slots.filter(slot => slotGroup(slot) === 'night');
+  return `<article class="guide-day-detail"><header class="guide-date-header"><div><span>${escapeHtml(month.month)}</span><h2>${escapeHtml(day.date)} — ${escapeHtml(day.label)}</h2></div><button type="button" data-guide-complete>${done ? '✓ Day Completed' : 'Mark Day Complete'}</button></header><div class="guide-schedule">${renderScheduleColumn('Daytime', daySlots)}${renderScheduleColumn('Night', nightSlots)}</div></article>`;
 }
 
 function progress() {
@@ -59,7 +81,7 @@ function render() {
   const month = currentMonth();
   const day = currentDay();
   const p = progress();
-  target.innerHTML = `<div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <strong>Guide</strong></div><header class="guide-header"><p>Persona 5 Royal Walkthrough</p><h1>Calendar Guide</h1><p>Interactive daily walkthrough prototype. The schedule is being built month by month.</p></header><section class="guide-progress"><div><strong>Prototype Progress</strong><span>${p.done}/${p.total} days completed · ${p.percent}%</span></div><div class="guide-progress-bar"><span style="width:${p.percent}%"></span></div></section><nav class="guide-month-tabs" aria-label="Guide months">${renderMonthTabs()}</nav><section class="guide-layout"><aside class="guide-calendar"><h2>${escapeHtml(month?.month || '')}</h2><div class="guide-day-list">${month ? renderDayList(month) : ''}</div></aside><div class="guide-content">${renderDay(month, day)}</div></section>`;
+  target.innerHTML = `<div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <strong>Guide</strong></div><header class="guide-header"><p>Persona 5 Royal 100% Perfect Schedule</p><h1>${escapeHtml(month?.month || 'Guide')}</h1><p>Follow each date in order. Every action is listed individually so you can check the schedule while playing.</p></header><section class="guide-progress"><div><strong>Schedule Progress</strong><span>${p.done}/${p.total} days completed · ${p.percent}%</span></div><div class="guide-progress-bar"><span style="width:${p.percent}%"></span></div></section><nav class="guide-month-tabs" aria-label="Guide months">${renderMonthTabs()}</nav><section class="guide-layout"><aside class="guide-calendar"><h2>${escapeHtml(month?.month || '')}</h2><div class="guide-day-list">${month ? renderDayList(month) : ''}</div></aside><div class="guide-content">${renderDay(month, day)}</div></section>`;
 
   target.querySelectorAll('[data-guide-month]').forEach(button => button.addEventListener('click', () => { state.monthIndex = Number(button.dataset.guideMonth); state.dayIndex = 0; render(); }));
   target.querySelectorAll('[data-guide-day]').forEach(button => button.addEventListener('click', () => { state.dayIndex = Number(button.dataset.guideDay); render(); }));
