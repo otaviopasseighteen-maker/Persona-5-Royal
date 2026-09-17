@@ -1,1 +1,122 @@
-[]
+[
+  {
+    "id": "arsene",
+    "name": "Arsène",
+    "arcana": "Fool",
+    "character": "Joker",
+    "type": "Initial Persona",
+    "forms": [
+      { "name": "Arsène", "stage": "Initial", "level": 1 },
+      { "name": "Satanael", "stage": "Second", "level": 95 },
+      { "name": "Raoul", "stage": "Third", "level": null }
+    ]
+  },
+  {
+    "id": "zorro",
+    "name": "Zorro",
+    "arcana": "Magician",
+    "character": "Morgana",
+    "type": "Initial Persona",
+    "forms": [
+      { "name": "Zorro", "stage": "Initial", "level": 1 },
+      { "name": "Mercurius", "stage": "Second", "level": null },
+      { "name": "Diego", "stage": "Third", "level": null }
+    ]
+  },
+  {
+    "id": "captain-kidd",
+    "name": "Captain Kidd",
+    "arcana": "Chariot",
+    "character": "Ryuji Sakamoto",
+    "type": "Initial Persona",
+    "forms": [
+      { "name": "Captain Kidd", "stage": "Initial", "level": 4 },
+      { "name": "Seiten Taisei", "stage": "Second", "level": null },
+      { "name": "William", "stage": "Third", "level": null }
+    ]
+  },
+  {
+    "id": "carmen",
+    "name": "Carmen",
+    "arcana": "Lovers",
+    "character": "Ann Takamaki",
+    "type": "Initial Persona",
+    "forms": [
+      { "name": "Carmen", "stage": "Initial", "level": 5 },
+      { "name": "Hecate", "stage": "Second", "level": null },
+      { "name": "Célestine", "stage": "Third", "level": null }
+    ]
+  },
+  {
+    "id": "goemon",
+    "name": "Goemon",
+    "arcana": "Emperor",
+    "character": "Yusuke Kitagawa",
+    "type": "Initial Persona",
+    "forms": [
+      { "name": "Goemon", "stage": "Initial", "level": 15 },
+      { "name": "Kamu Susano-o", "stage": "Second", "level": null },
+      { "name": "Gorokichi", "stage": "Third", "level": null }
+    ]
+  },
+  {
+    "id": "johanna",
+    "name": "Johanna",
+    "arcana": "Priestess",
+    "character": "Makoto Niijima",
+    "type": "Initial Persona",
+    "forms": [
+      { "name": "Johanna", "stage": "Initial", "level": 21 },
+      { "name": "Anat", "stage": "Second", "level": null },
+      { "name": "Agnes", "stage": "Third", "level": null }
+    ]
+  },
+  {
+    "id": "necronomicon",
+    "name": "Necronomicon",
+    "arcana": "Hermit",
+    "character": "Futaba Sakura",
+    "type": "Initial Persona",
+    "forms": [
+      { "name": "Necronomicon", "stage": "Initial", "level": null },
+      { "name": "Prometheus", "stage": "Second", "level": null },
+      { "name": "Al Azif", "stage": "Third", "level": null }
+    ]
+  },
+  {
+    "id": "milady",
+    "name": "Milady",
+    "arcana": "Empress",
+    "character": "Haru Okumura",
+    "type": "Initial Persona",
+    "forms": [
+      { "name": "Milady", "stage": "Initial", "level": 36 },
+      { "name": "Astarte", "stage": "Second", "level": null },
+      { "name": "Lucy", "stage": "Third", "level": null }
+    ]
+  },
+  {
+    "id": "robin-hood",
+    "name": "Robin Hood",
+    "arcana": "Justice",
+    "character": "Goro Akechi",
+    "type": "Initial Persona",
+    "forms": [
+      { "name": "Robin Hood", "stage": "Initial", "level": 45 },
+      { "name": "Loki", "stage": "Second", "level": 75 },
+      { "name": "Hereward", "stage": "Third", "level": null }
+    ]
+  },
+  {
+    "id": "cendrillon",
+    "name": "Cendrillon",
+    "arcana": "Faith",
+    "character": "Sumire Yoshizawa",
+    "type": "Initial Persona",
+    "forms": [
+      { "name": "Cendrillon", "stage": "Initial", "level": 75 },
+      { "name": "Vanadis", "stage": "Second", "level": null },
+      { "name": "Ella", "stage": "Third", "level": null }
+    ]
+  }
+]
