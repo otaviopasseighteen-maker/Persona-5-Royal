@@ -1,4 +1,4 @@
-import { loadCollection } from './data.js';
+import { loadCollection } from './data.js?v=p5r-modules-20260917-3';
 
 const pageMap = {
   characters: 'characters',
