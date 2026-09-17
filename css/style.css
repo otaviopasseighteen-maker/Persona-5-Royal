@@ -38,6 +38,11 @@ a { text-decoration: none; }
 .guide-schedule-slot h3 { margin: 0 0 .45rem; font-size: .95rem; }
 .guide-activities { margin: 0; padding-left: 1.35rem; }
 .guide-activities li { margin: .45rem 0; line-height: 1.45; }
+.guide-activity-stat { color: #1677b8; font-weight: 600; }
+.guide-activity-relationship { color: #2e8b57; font-weight: 600; }
+.guide-activity-palace { color: #c0392b; font-weight: 600; }
+.guide-activity-item { color: #d27a00; font-weight: 600; }
+.guide-activity-normal { color: inherit; font-weight: 400; }
 .guide-empty { padding: 0 1rem 1rem; }
 @media (max-width: 700px) {
   .guide-layout, .guide-schedule { grid-template-columns: 1fr; }
