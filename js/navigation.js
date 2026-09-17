@@ -3,10 +3,7 @@ const links = [
   ['Personas', 'personas.html'],
   ['Shadows', 'shadows.html'],
   ['Palaces', 'palaces.html'],
-  ['Confidants', 'confidants.html'],
-  ['Skills', 'skills.html'],
-  ['Items', 'items.html'],
-  ['Guide', 'guide.html']
+  ['Confidants', 'confidants.html']
 ];
 
 export function renderNavigation(target) {
