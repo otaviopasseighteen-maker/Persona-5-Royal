@@ -11,3 +11,25 @@ a { text-decoration: none; }
 .rank-up { margin: .5rem 0; border: 1px solid #ccc; padding: .75rem; }
 .rank-up summary { cursor: pointer; font-weight: 700; }
 .rank-content { padding: .5rem 0 0; }
+.guide-header { margin-bottom: 1.5rem; }
+.guide-header h1 { margin: .25rem 0; }
+.guide-progress { border: 1px solid #ccc; padding: 1rem; margin-bottom: 1rem; }
+.guide-progress > div:first-child { display: flex; justify-content: space-between; gap: 1rem; }
+.guide-progress-bar { height: .6rem; background: #eee; margin-top: .75rem; overflow: hidden; }
+.guide-progress-bar span { display: block; height: 100%; background: #555; }
+.guide-month-tabs { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+.guide-month-button, .guide-day-button, .guide-day-actions button { border: 1px solid #ccc; background: #fff; padding: .65rem .8rem; cursor: pointer; }
+.guide-month-button.active, .guide-day-button.active { border-color: #111; font-weight: 700; }
+.guide-layout { display: grid; grid-template-columns: 240px 1fr; gap: 1rem; }
+.guide-calendar { border: 1px solid #ccc; padding: 1rem; }
+.guide-day-list { display: grid; gap: .4rem; }
+.guide-day-button { display: grid; grid-template-columns: 1fr auto auto; text-align: left; gap: .5rem; width: 100%; }
+.guide-day-button.completed { text-decoration: line-through; }
+.guide-day-detail { border: 1px solid #ccc; padding: 1rem; }
+.guide-day-detail header { border-bottom: 1px solid #ccc; margin-bottom: 1rem; }
+.guide-day-detail header p { margin-bottom: .25rem; }
+.guide-day-actions { margin-bottom: 1rem; }
+.guide-slots { display: grid; gap: .75rem; }
+.guide-slot { border: 1px solid #ddd; padding: .8rem; }
+.guide-slot h3 { margin-top: 0; }
+@media (max-width: 700px) { .guide-layout { grid-template-columns: 1fr; } .guide-progress > div:first-child { flex-direction: column; } }
