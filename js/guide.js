@@ -1,4 +1,4 @@
-const DATA_URL = new URL('../data/guide.json?v=p5r-guide-20260917-1', import.meta.url);
+const DATA_URL = '../data/guide.json?v=p5r-guide-20260917-2';
 const STORAGE_KEY = 'p5r-guide-completed-v1';
 
 const state = { data: [], monthIndex: 0, dayIndex: 0, completed: new Set() };
@@ -19,7 +19,6 @@ function saveCompleted() {
 }
 
 function dayKey(month, day) { return `${month.month}-${day.date}`; }
-
 function currentMonth() { return state.data[state.monthIndex]; }
 function currentDay() { return currentMonth()?.days[state.dayIndex]; }
 
@@ -43,14 +42,9 @@ function renderDayList(month) {
 
 function renderDay(month, day) {
   if (!day) return '<p>No guide data available for this date.</p>';
-  const key = dayKey(month, day);
-  const done = state.completed.has(key);
+  const done = state.completed.has(dayKey(month, day));
   const slots = (day.slots || []).map(slot => `<section class="guide-slot"><h3>${escapeHtml(slot.period)}</h3><p>${escapeHtml(slot.text)}</p></section>`).join('');
-  return `<article class="guide-day-detail">
-    <header><p>${escapeHtml(month.month)}</p><h2>${escapeHtml(day.date)} — ${escapeHtml(day.label)}</h2></header>
-    <div class="guide-day-actions"><button type="button" data-guide-complete>${done ? '✓ Day Completed' : 'Mark Day Complete'}</button></div>
-    <div class="guide-slots">${slots}</div>
-  </article>`;
+  return `<article class="guide-day-detail"><header><p>${escapeHtml(month.month)}</p><h2>${escapeHtml(day.date)} — ${escapeHtml(day.label)}</h2></header><div class="guide-day-actions"><button type="button" data-guide-complete>${done ? '✓ Day Completed' : 'Mark Day Complete'}</button></div><div class="guide-slots">${slots}</div></article>`;
 }
 
 function progress() {
@@ -65,26 +59,11 @@ function render() {
   const month = currentMonth();
   const day = currentDay();
   const p = progress();
-  target.innerHTML = `<div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <strong>Guide</strong></div>
-    <header class="guide-header"><p>Persona 5 Royal Walkthrough</p><h1>Calendar Guide</h1><p>Interactive daily walkthrough prototype. The schedule is being built month by month.</p></header>
-    <section class="guide-progress"><div><strong>Prototype Progress</strong><span>${p.done}/${p.total} days completed · ${p.percent}%</span></div><div class="guide-progress-bar"><span style="width:${p.percent}%"></span></div></section>
-    <nav class="guide-month-tabs" aria-label="Guide months">${renderMonthTabs()}</nav>
-    <section class="guide-layout">
-      <aside class="guide-calendar"><h2>${escapeHtml(month?.month || '')}</h2><div class="guide-day-list">${month ? renderDayList(month) : ''}</div></aside>
-      <div class="guide-content">${renderDay(month, day)}</div>
-    </section>`;
+  target.innerHTML = `<div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <strong>Guide</strong></div><header class="guide-header"><p>Persona 5 Royal Walkthrough</p><h1>Calendar Guide</h1><p>Interactive daily walkthrough prototype. The schedule is being built month by month.</p></header><section class="guide-progress"><div><strong>Prototype Progress</strong><span>${p.done}/${p.total} days completed · ${p.percent}%</span></div><div class="guide-progress-bar"><span style="width:${p.percent}%"></span></div></section><nav class="guide-month-tabs" aria-label="Guide months">${renderMonthTabs()}</nav><section class="guide-layout"><aside class="guide-calendar"><h2>${escapeHtml(month?.month || '')}</h2><div class="guide-day-list">${month ? renderDayList(month) : ''}</div></aside><div class="guide-content">${renderDay(month, day)}</div></section>`;
 
-  target.querySelectorAll('[data-guide-month]').forEach(button => button.addEventListener('click', () => {
-    state.monthIndex = Number(button.dataset.guideMonth); state.dayIndex = 0; render();
-  }));
-  target.querySelectorAll('[data-guide-day]').forEach(button => button.addEventListener('click', () => {
-    state.dayIndex = Number(button.dataset.guideDay); render();
-  }));
-  target.querySelector('[data-guide-complete]')?.addEventListener('click', () => {
-    const key = dayKey(month, day);
-    state.completed.has(key) ? state.completed.delete(key) : state.completed.add(key);
-    saveCompleted(); render();
-  });
+  target.querySelectorAll('[data-guide-month]').forEach(button => button.addEventListener('click', () => { state.monthIndex = Number(button.dataset.guideMonth); state.dayIndex = 0; render(); }));
+  target.querySelectorAll('[data-guide-day]').forEach(button => button.addEventListener('click', () => { state.dayIndex = Number(button.dataset.guideDay); render(); }));
+  target.querySelector('[data-guide-complete]')?.addEventListener('click', () => { const key = dayKey(month, day); state.completed.has(key) ? state.completed.delete(key) : state.completed.add(key); saveCompleted(); render(); });
 }
 
 async function init() {
