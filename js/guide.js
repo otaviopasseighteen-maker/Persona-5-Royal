@@ -1,4 +1,4 @@
-const DATA_URL = '../data/guide.json?v=p5r-guide-20260917-4';
+const DATA_URL = '../data/guide.json?v=p5r-guide-20260917-5';
 const STORAGE_KEY = 'p5r-guide-completed-v2';
 
 const state = { data: [], monthIndex: 0, dayIndex: 0, completed: new Set() };
@@ -50,6 +50,39 @@ function activityType(text, month) {
   return 'normal';
 }
 
+function isPalaceActivity(text) {
+  const value = String(text || '').toLowerCase();
+  return /(palace|infiltration|shadow kamoshida|steal kamoshida|calling card|hideout|metaverse|treasure|shadow|seed|guardian|castle|heart|fusion tutorial|fuse arsene|fuse .* pixie)/.test(value);
+}
+
+// Some PSNProfiles schedule rows place Palace actions and the activities that
+// happen after leaving the Palace in one visual column. Once the Palace section
+// ends, those remaining activities consume the Night slot. Keep that boundary
+// explicit in the UI so the player never wonders what to do after leaving.
+function normalizeSchedule(day, month) {
+  const slots = Array.isArray(day?.slots) ? day.slots : [];
+  if (month !== 'April' || slots.some(slot => slotGroup(slot) === 'night')) return slots;
+
+  const daytime = slots.filter(slot => slotGroup(slot) === 'day');
+  if (daytime.length !== 1) return slots;
+
+  const source = daytime[0];
+  const activities = Array.isArray(source.activities) ? source.activities : (source.text ? [source.text] : []);
+  const palaceIndexes = activities.map((activity, index) => isPalaceActivity(activity) ? index : -1).filter(index => index >= 0);
+  if (!palaceIndexes.length) return slots;
+
+  const lastPalaceIndex = palaceIndexes[palaceIndexes.length - 1];
+  if (lastPalaceIndex >= activities.length - 1) return slots;
+
+  const dayActivities = activities.slice(0, lastPalaceIndex + 1);
+  const nightActivities = activities.slice(lastPalaceIndex + 1);
+
+  return [
+    { ...source, period: 'Daytime', activities: dayActivities },
+    { period: 'Night', activities: nightActivities }
+  ];
+}
+
 function activityList(slot, month) {
   const activities = Array.isArray(slot.activities) ? slot.activities : (slot.text ? [slot.text] : []);
   return `<ul class="guide-activities">${activities.map(activity => `<li class="guide-activity guide-activity-${activityType(activity, month.month)}">${escapeHtml(activity)}</li>`).join('')}</ul>`;
@@ -73,7 +106,7 @@ function renderScheduleColumn(title, slots, month) {
 function renderDay(month, day) {
   if (!day) return '<p>No guide data available for this date.</p>';
   const done = state.completed.has(dayKey(month, day));
-  const slots = day.slots || [];
+  const slots = normalizeSchedule(day, month.month);
   const daySlots = slots.filter(slot => slotGroup(slot) === 'day');
   const nightSlots = slots.filter(slot => slotGroup(slot) === 'night');
   return `<article class="guide-day-detail"><header class="guide-date-header"><div><span>${escapeHtml(month.month)}</span><h2>${escapeHtml(day.date)} — ${escapeHtml(day.label)}</h2></div><button type="button" data-guide-complete>${done ? '✓ Day Completed' : 'Mark Day Complete'}</button></header><div class="guide-schedule">${renderScheduleColumn('Daytime', daySlots, month)}${renderScheduleColumn('Night', nightSlots, month)}</div></article>`;
