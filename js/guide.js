@@ -1,4 +1,4 @@
-const DATA_URL = '../data/guide.json?v=p5r-guide-20260917-3';
+const DATA_URL = '../data/guide.json?v=p5r-guide-20260917-4';
 const STORAGE_KEY = 'p5r-guide-completed-v2';
 
 const state = { data: [], monthIndex: 0, dayIndex: 0, completed: new Set() };
@@ -40,9 +40,19 @@ function renderDayList(month) {
   }).join('');
 }
 
-function activityList(slot) {
+function activityType(text, month) {
+  if (month !== 'April') return 'normal';
+  const value = String(text || '').toLowerCase();
+  if (/(knowledge|knowledge rank|guts|guts rank|kindness|kindness rank|charm|charm rank|proficiency|proficiency rank|gain .*\+\d)/.test(value)) return 'stat';
+  if (/(rank|confidant|spend time with|progress (death|magician|lovers|hierophant|chariot|fool)|magician rank|lovers rank|death rank|hierophant rank|chariot rank)/.test(value)) return 'relationship';
+  if (/(palace|infiltration|shadow kamoshida|steal kamoshida|calling card|hideout|metaverse|treasure|shadow|seed|guardian|castle|heart)/.test(value)) return 'palace';
+  if (/(book|read |borrow |dvd|rent |bio nutrient|nutrient|arginade|water of rebirth|silk yarn|tin clasp|lock pick|yakisoba pan|tv|items?|purchase|buy )/.test(value)) return 'item';
+  return 'normal';
+}
+
+function activityList(slot, month) {
   const activities = Array.isArray(slot.activities) ? slot.activities : (slot.text ? [slot.text] : []);
-  return `<ul class="guide-activities">${activities.map(activity => `<li>${escapeHtml(activity)}</li>`).join('')}</ul>`;
+  return `<ul class="guide-activities">${activities.map(activity => `<li class="guide-activity guide-activity-${activityType(activity, month.month)}">${escapeHtml(activity)}</li>`).join('')}</ul>`;
 }
 
 function slotGroup(slot) {
@@ -51,13 +61,13 @@ function slotGroup(slot) {
   return lower.includes('evening') || lower.includes('night') ? 'night' : 'day';
 }
 
-function renderSlot(slot) {
-  return `<section class="guide-schedule-slot ${slotGroup(slot)}"><h3>${escapeHtml(slot.period)}</h3>${activityList(slot)}</section>`;
+function renderSlot(slot, month) {
+  return `<section class="guide-schedule-slot ${slotGroup(slot)}"><h3>${escapeHtml(slot.period)}</h3>${activityList(slot, month)}</section>`;
 }
 
-function renderScheduleColumn(title, slots) {
+function renderScheduleColumn(title, slots, month) {
   if (!slots.length) return `<section class="guide-schedule-column"><h3>${title}</h3><p class="guide-empty">No scheduled activity.</p></section>`;
-  return `<section class="guide-schedule-column"><h3>${title}</h3>${slots.map(renderSlot).join('')}</section>`;
+  return `<section class="guide-schedule-column"><h3>${title}</h3>${slots.map(slot => renderSlot(slot, month)).join('')}</section>`;
 }
 
 function renderDay(month, day) {
@@ -66,7 +76,7 @@ function renderDay(month, day) {
   const slots = day.slots || [];
   const daySlots = slots.filter(slot => slotGroup(slot) === 'day');
   const nightSlots = slots.filter(slot => slotGroup(slot) === 'night');
-  return `<article class="guide-day-detail"><header class="guide-date-header"><div><span>${escapeHtml(month.month)}</span><h2>${escapeHtml(day.date)} — ${escapeHtml(day.label)}</h2></div><button type="button" data-guide-complete>${done ? '✓ Day Completed' : 'Mark Day Complete'}</button></header><div class="guide-schedule">${renderScheduleColumn('Daytime', daySlots)}${renderScheduleColumn('Night', nightSlots)}</div></article>`;
+  return `<article class="guide-day-detail"><header class="guide-date-header"><div><span>${escapeHtml(month.month)}</span><h2>${escapeHtml(day.date)} — ${escapeHtml(day.label)}</h2></div><button type="button" data-guide-complete>${done ? '✓ Day Completed' : 'Mark Day Complete'}</button></header><div class="guide-schedule">${renderScheduleColumn('Daytime', daySlots, month)}${renderScheduleColumn('Night', nightSlots, month)}</div></article>`;
 }
 
 function progress() {
