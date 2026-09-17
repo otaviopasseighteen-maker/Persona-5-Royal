@@ -1,1 +1,12 @@
-[]
+[
+  {"id":"joker","name":"Joker","role":"Protagonist / Phantom Thief"},
+  {"id":"morgana","name":"Morgana","role":"Phantom Thief"},
+  {"id":"ryuji-sakamoto","name":"Ryuji Sakamoto","role":"Phantom Thief"},
+  {"id":"ann-takamaki","name":"Ann Takamaki","role":"Phantom Thief"},
+  {"id":"yusuke-kitagawa","name":"Yusuke Kitagawa","role":"Phantom Thief"},
+  {"id":"makoto-nijima","name":"Makoto Niijima","role":"Phantom Thief"},
+  {"id":"futaba-sakura","name":"Futaba Sakura","role":"Phantom Thief"},
+  {"id":"haru-okumura","name":"Haru Okumura","role":"Phantom Thief"},
+  {"id":"goro-akechi","name":"Goro Akechi","role":"Detective Prince / Phantom Thief"},
+  {"id":"kasumi-yoshizawa","name":"Kasumi Yoshizawa","role":"Phantom Thief"}
+]
