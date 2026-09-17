@@ -1,1 +1,101 @@
-[]
+[
+  {
+    "id": "kamoshida",
+    "name": "Kamoshida's Palace",
+    "owner": "Suguru Kamoshida",
+    "shadowId": "shadow-kamoshida",
+    "location": "Shujin Academy",
+    "origin": "Kamoshida's distorted desires turn Shujin Academy into a castle where he sees himself as a powerful king and the students as subjects who exist to serve him.",
+    "story": "The Phantom Thieves enter Kamoshida's Palace after learning about his abuse of students. As they explore the castle, they uncover how his distorted view of himself and his treatment of the students are connected.",
+    "ruler": "Shadow Kamoshida embodies Kamoshida's arrogance, entitlement, and desire for control. His Palace presents him as a king who believes the school belongs to him.",
+    "outcome": "After the Phantom Thieves defeat Shadow Kamoshida and send the calling card, Kamoshida confesses to his crimes and the abuse at Shujin Academy is exposed."
+  },
+  {
+    "id": "madarame",
+    "name": "Madarame's Palace",
+    "owner": "Ichiryusai Madarame",
+    "shadowId": "shadow-madarame",
+    "location": "A distorted version of Madarame's museum and residence",
+    "origin": "Madarame's distorted desires transform his home and art world into a museum where he views himself as a celebrated master and his students as possessions.",
+    "story": "The Phantom Thieves investigate Madarame after learning about the exploitation of his pupils, including Yusuke. The Palace reveals how Madarame takes credit for his students' work while maintaining the image of a respected artist.",
+    "ruler": "Shadow Madarame represents the artist's vanity and his desire to possess the talent and work of others. His Palace is filled with stolen and appropriated art.",
+    "outcome": "After the confrontation and calling card, Madarame admits his crimes and confesses to exploiting his students and taking credit for their work."
+  },
+  {
+    "id": "kaneshiro",
+    "name": "Kaneshiro's Palace",
+    "owner": "Junya Kaneshiro",
+    "shadowId": "shadow-kaneshiro",
+    "location": "Shibuya",
+    "origin": "Kaneshiro's greed and criminal lifestyle distort Shibuya into a giant bank, reflecting his belief that money gives him power over other people.",
+    "story": "After Makoto becomes involved with the Phantom Thieves, the group investigates Kaneshiro, a criminal who uses students as targets for extortion. His Palace exposes the scale of his greed and his control over those trapped by his debts.",
+    "ruler": "Shadow Kaneshiro sees himself as a wealthy and untouchable figure surrounded by money. The bank represents his obsession with profit, debt, and control.",
+    "outcome": "Kaneshiro's confession brings his extortion operation to light and releases the people he had been exploiting."
+  },
+  {
+    "id": "futaba",
+    "name": "Futaba's Palace",
+    "owner": "Futaba Sakura",
+    "shadowId": "shadow-futaba",
+    "location": "Sakura residence and surrounding desert",
+    "origin": "Futaba's trauma, isolation, guilt, and distorted memories of her mother's death manifest as a vast pyramid in a desert.",
+    "story": "The Phantom Thieves enter Futaba's Palace after she asks them to change her heart. Inside, they confront the memories and self-blame that have kept Futaba isolated since Wakaba's death.",
+    "ruler": "Shadow Futaba is unusual because the Palace ruler is also its victim. The Palace and its ruler reflect Futaba's guilt and her belief that she was responsible for her mother's death.",
+    "outcome": "Futaba confronts her distorted memories and accepts that her mother's death was not her fault. Her heart begins to change, and she later joins the Phantom Thieves."
+  },
+  {
+    "id": "okumura",
+    "name": "Okumura's Palace",
+    "owner": "Kunikazu Okumura",
+    "shadowId": "shadow-okumura",
+    "location": "Okumura Foods / space station",
+    "origin": "Okumura's ambition and obsession with expanding his company distort his workplace into a space station where workers are treated as disposable labor.",
+    "story": "The Phantom Thieves investigate Okumura after learning about the harsh conditions inside his company. The Palace depicts a corporate system built around productivity, profit, and the replacement of exhausted workers.",
+    "ruler": "Shadow Okumura presents himself as a powerful businessman directing an enormous corporate machine. The workers beneath him are represented as expendable robots.",
+    "outcome": "Okumura's Palace is destroyed, but his change of heart is followed by his sudden death. The aftermath also becomes a turning point in the public perception of the Phantom Thieves."
+  },
+  {
+    "id": "sae",
+    "name": "Sae's Palace",
+    "owner": "Sae Niijima",
+    "shadowId": "shadow-sae",
+    "location": "Tokyo courthouse / casino",
+    "origin": "Sae's frustration with the justice system and her growing obsession with winning distort a courthouse into a casino where justice is treated like a game of chance.",
+    "story": "The Phantom Thieves infiltrate Sae's Palace while Joker is already under arrest. The casino reflects Sae's increasingly cynical view of her career and her belief that success requires defeating everyone around her.",
+    "ruler": "Shadow Sae represents Sae's competitive obsession and her distorted relationship with justice. In the Palace, she is a casino queen who treats other people's lives and careers as wagers.",
+    "outcome": "The Palace operation helps expose the distortion behind Sae's behavior. Her perspective changes, and she ultimately becomes an important part of the Phantom Thieves' plan to reveal the conspiracy."
+  },
+  {
+    "id": "shido",
+    "name": "Shido's Palace",
+    "owner": "Masayoshi Shido",
+    "shadowId": "shadow-shido",
+    "location": "Cruise ship",
+    "origin": "Shido's ambition for political power transforms his Palace into a luxury cruise ship filled with powerful figures, reflecting his belief that society exists beneath his authority.",
+    "story": "The Phantom Thieves infiltrate Shido's Palace to uncover the man behind the political conspiracy that has shaped much of their ordeal. The ship contains representations of the influential people Shido manipulates and the social hierarchy he intends to dominate.",
+    "ruler": "Shadow Shido embodies his narcissism and desire for absolute political power. He sees himself as the captain who deserves to control the country and everyone aboard his metaphorical ship.",
+    "outcome": "After the Phantom Thieves defeat Shido and expose the conspiracy, Shido publicly confesses and his political power collapses."
+  },
+  {
+    "id": "maruki",
+    "name": "Maruki's Palace",
+    "owner": "Takuto Maruki",
+    "shadowId": "shadow-maruki",
+    "location": "Research facility / laboratory",
+    "origin": "Maruki's desire to create a world without suffering manifests as a research facility dedicated to rewriting reality and removing painful experiences.",
+    "story": "After reality is altered, the Phantom Thieves discover that Maruki has created a world in which people receive the lives they wish they had. They reject this artificial happiness and confront the consequences of giving one person control over reality.",
+    "ruler": "Maruki's Palace represents his conviction that suffering should be removed from human life, even when doing so overrides people's autonomy and memories.",
+    "outcome": "The Phantom Thieves confront Maruki and reject his rewritten reality. Maruki accepts their decision, allowing the original world to return and its people to face life on their own terms."
+  },
+  {
+    "id": "mementos",
+    "name": "Mementos",
+    "owner": "The Collective Unconscious",
+    "shadowId": null,
+    "location": "The collective unconscious of humanity",
+    "origin": "Mementos is the Palace-like manifestation of humanity's collective unconscious, formed from the thoughts, desires, fears, and distorted perceptions shared by society.",
+    "story": "The Phantom Thieves repeatedly descend into Mementos as they investigate requests and the depths of the collective unconscious. The deeper they travel, the more the location reveals humanity's relationship with distorted desires and its wish to surrender responsibility.",
+    "objective": "Mementos functions as the collective Palace of humanity. It connects individual Palaces to a much larger representation of society's shared consciousness and ultimately becomes central to the final conflict.",
+    "depths": "At the deepest point of Mementos, the Phantom Thieves encounter the Holy Grail and Yaldabaoth. The encounter reveals that the conflict has grown beyond individual Palace rulers and is tied to humanity's collective desire to be controlled rather than bear the burden of choosing its own path."
+  }
+]
