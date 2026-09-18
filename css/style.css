@@ -1030,51 +1030,20 @@ body[data-page="palaces"] .entity-list .entity-link:hover{border-color:var(--red
 }
 
 /* CHARACTER FRAME — consistent Phantom Thief artwork + waist-up focus */
-.character-swipe-card{
-  min-height:240px;
-  height:240px;
-  grid-template-columns:minmax(0,1fr) minmax(220px,36%);
-}
-.character-card-portrait{
-  height:237px;
-  min-height:237px;
-  align-items:flex-start;
-  justify-content:center;
-  overflow:hidden;
-}
-.character-card-portrait img{
-  width:158%;
-  height:170%;
-  object-fit:contain;
-  object-position:50% 0%;
-  transform:translateX(4%) translateY(0) scale(1);
-  transform-origin:50% 0%;
-}
-.character-swipe-card:hover .character-card-portrait img,
-.character-swipe-card:focus-visible .character-card-portrait img{
-  transform:translateX(-1%) translateY(0) scale(1.07);
-  transform-origin:50% 0%;
-}
-@media(max-width:760px){
-  .character-swipe-card{
-    height:220px;
-    min-height:220px;
-    grid-template-columns:minmax(0,1fr) minmax(155px,36%);
-  }
-  .character-card-portrait{
-    height:217px;
-    min-height:217px;
-  }
-  .character-card-portrait img{
-    width:165%;
-    height:170%;
-    transform:translateX(3%) translateY(0) scale(1);
-  }
-  .character-swipe-card:hover .character-card-portrait img,
-  .character-swipe-card:focus-visible .character-card-portrait img{
-    transform:translateX(-1%) translateY(0) scale(1.06);
-  }
-}
+.character-swipe-card{min-height:240px;height:240px;grid-template-columns:minmax(0,1fr) minmax(220px,36%)}
+.character-card-portrait{height:237px;min-height:237px;align-items:flex-start;justify-content:center;overflow:hidden}
+.character-card-portrait img{width:158%;height:170%;object-fit:contain;object-position:50% 0%;transform:translateX(3%) translateY(0) scale(1);transform-origin:50% 0%}
+.character-swipe-card:hover .character-card-portrait img,.character-swipe-card:focus-visible .character-card-portrait img{transform:translateX(3%) translateY(0) scale(1.07);transform-origin:50% 0%}
+/* Individual portrait alignment — tuned to each source artwork */
+.character-swipe-card.character-haru-okumura .character-card-portrait img{transform:translateX(-4%) translateY(0) scale(1)}
+.character-swipe-card.character-kasumi-yoshizawa .character-card-portrait img{transform:translateX(-4%) translateY(0) scale(1)}
+.character-swipe-card.character-ann-takamaki .character-card-portrait img{transform:translateX(-1%) translateY(0) scale(1)}
+.character-swipe-card.character-morgana .character-card-portrait img{transform:translateX(3%) translateY(-5%) scale(1)}
+.character-swipe-card.character-haru-okumura:hover .character-card-portrait img,.character-swipe-card.character-haru-okumura:focus-visible .character-card-portrait img{transform:translateX(-4%) translateY(0) scale(1.07)}
+.character-swipe-card.character-kasumi-yoshizawa:hover .character-card-portrait img,.character-swipe-card.character-kasumi-yoshizawa:focus-visible .character-card-portrait img{transform:translateX(-4%) translateY(0) scale(1.07)}
+.character-swipe-card.character-ann-takamaki:hover .character-card-portrait img,.character-swipe-card.character-ann-takamaki:focus-visible .character-card-portrait img{transform:translateX(-1%) translateY(0) scale(1.07)}
+.character-swipe-card.character-morgana:hover .character-card-portrait img,.character-swipe-card.character-morgana:focus-visible .character-card-portrait img{transform:translateX(3%) translateY(-5%) scale(1.07)}
+@media(max-width:760px){.character-swipe-card{height:220px;min-height:220px;grid-template-columns:minmax(0,1fr) minmax(155px,36%)}.character-card-portrait{height:217px;min-height:217px}.character-card-portrait img{width:165%;height:170%;transform:translateX(3%) translateY(0) scale(1)}.character-swipe-card:hover .character-card-portrait img,.character-swipe-card:focus-visible .character-card-portrait img{transform:translateX(3%) translateY(0) scale(1.06)}.character-swipe-card.character-haru-okumura .character-card-portrait img{transform:translateX(-4%) translateY(0) scale(1)}.character-swipe-card.character-kasumi-yoshizawa .character-card-portrait img{transform:translateX(-4%) translateY(0) scale(1)}.character-swipe-card.character-ann-takamaki .character-card-portrait img{transform:translateX(-1%) translateY(0) scale(1)}.character-swipe-card.character-morgana .character-card-portrait img{transform:translateX(3%) translateY(-5%) scale(1)}}
 /* PERSONAS / SHADOWS / PALACES — CHARACTER-STYLE INDEX */
 body[data-page="personas"] .persona-list,body[data-page="shadows"] .entity-list,body[data-page="palaces"] .entity-list{display:grid;gap:1.15rem;}
 body[data-page="personas"] .persona-card,body[data-page="shadows"] .entity-link,body[data-page="palaces"] .entity-link{position:relative;min-height:190px;overflow:hidden;border:3px solid #fff;background:#111;color:#fff;box-shadow:8px 8px 0 #000;clip-path:polygon(1% 0,100% 3%,98% 100%,0 96%);}
