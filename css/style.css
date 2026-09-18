@@ -1030,6 +1030,17 @@ body[data-page="palaces"] .entity-list .entity-link:hover{border-color:var(--red
 }
 
 /* CHARACTER FRAME — consistent Phantom Thief artwork + waist-up focus */
+
+@media(min-width:761px){
+  .character-swipe-card{
+    min-height:380px;
+    height:380px;
+  }
+  .character-card-portrait{
+    height:377px;
+    min-height:377px;
+  }
+}
 .character-swipe-card{min-height:240px;height:240px;grid-template-columns:minmax(0,1fr) minmax(220px,36%)}
 .character-card-portrait{height:237px;min-height:237px;align-items:flex-start;justify-content:center;overflow:hidden}
 .character-card-portrait img{width:158%;height:170%;object-fit:contain;object-position:50% 0%;transform:translateX(3%) translateY(0) scale(1);transform-origin:50% 0%}
