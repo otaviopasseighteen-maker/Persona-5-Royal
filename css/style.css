@@ -1056,6 +1056,20 @@ body[data-page="personas"] .persona-card p,body[data-page="shadows"] .entity-lin
 body[data-page="personas"] .persona-card a,body[data-page="shadows"] .entity-link>a,body[data-page="palaces"] .entity-link>a{align-self:flex-start;margin-top:.7rem;padding:.65rem .85rem;background:var(--red);color:#fff;font-weight:1000;text-transform:uppercase;clip-path:polygon(4% 0,100% 8%,96% 100%,0 92%);}
 body[data-page="personas"] .persona-card:hover,body[data-page="shadows"] .entity-link:hover,body[data-page="palaces"] .entity-link:hover{transform:translateX(8px) rotate(0) scale(1.01);box-shadow:14px 14px 0 var(--red);}
 
+/* Desktop portrait alignment — Morgana and Ann only */
+@media(min-width:761px){
+  .character-swipe-card.character-morgana .character-card-portrait img,
+  .character-swipe-card.character-morgana:hover .character-card-portrait img,
+  .character-swipe-card.character-morgana:focus-visible .character-card-portrait img{
+    transform:translateX(3%) translateY(-11%) scale(1);
+  }
+  .character-swipe-card.character-ann-takamaki .character-card-portrait img,
+  .character-swipe-card.character-ann-takamaki:hover .character-card-portrait img,
+  .character-swipe-card.character-ann-takamaki:focus-visible .character-card-portrait img{
+    transform:translateX(-1%) translateY(-10%) scale(1);
+  }
+}
+
 /* Haru/Kasumi portrait framing — intentional face-first crop */
 .character-swipe-card.character-haru-okumura .character-card-portrait img{
   width:150%;
