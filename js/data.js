@@ -1,5 +1,5 @@
 const DATA_ROOT = new URL('../data/', import.meta.url);
-const DATA_VERSION = 'p5r-data-20260917-2';
+const DATA_VERSION = 'p5r-data-20260918-3';
 
 export async function loadCollection(name) {
   const url = new URL(`${name}.json?v=${DATA_VERSION}`, DATA_ROOT);
