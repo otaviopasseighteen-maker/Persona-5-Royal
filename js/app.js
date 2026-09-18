@@ -1,6 +1,6 @@
 import { renderNavigation } from './navigation.js?v=p5r-modules-20260917-6';
 import { renderHome } from './components.js?v=p5r-modules-20260917-5';
-import { renderPage } from './router.js?v=p5r-characters-20260918-2';
+import { renderPage } from './router.js?v=p5r-persona-cards-20260918-2';
 import { initMotion } from './motion.js?v=p5r-motion-20260918-1';
 import { initAmbientScene } from './ambient.js?v=p5r-ambient-20260918-1';
 
