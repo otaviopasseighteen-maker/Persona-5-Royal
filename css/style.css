@@ -968,3 +968,63 @@ body[data-page="palaces"] main::before{content:"METAVERSE ARCHIVE";position:fixe
 @media(prefers-reduced-motion:reduce){
   .persona-list .persona-card::after{animation:none}
 }
+
+
+/* Character image hierarchy: portrait stays crisp above atmospheric artwork */
+.character-swipe-card::after{
+  inset:-10% 0 -10% 38%;
+  width:auto;height:auto;right:0;top:-10%;
+  opacity:.20;
+  filter:grayscale(1) contrast(1.15) brightness(.38) blur(6px);
+  transform:scale(1.05) translateX(5%);
+  clip-path:polygon(18% 0,100% 0,100% 100%,0 100%);
+}
+.character-swipe-card:hover::after,.character-swipe-card:focus-visible::after{
+  opacity:.28;
+  filter:grayscale(.55) contrast(1.15) brightness(.5) blur(7px);
+  transform:scale(1.09) translateX(1%);
+}
+.character-card-portrait{
+  z-index:6;
+  border-left:1px solid rgba(255,255,255,.12);
+  box-shadow:inset 10px 0 30px rgba(0,0,0,.35);
+}
+.character-card-portrait img{
+  position:relative;z-index:7;
+  filter:grayscale(.9) contrast(1.35) brightness(.62) drop-shadow(0 0 18px rgba(0,0,0,.8));
+}
+.character-swipe-card:hover .character-card-portrait img,.character-swipe-card:focus-visible .character-card-portrait img{
+  filter:grayscale(.2) contrast(1.4) brightness(.9) drop-shadow(0 0 22px rgba(226,27,35,.22));
+}
+.character-card-copy{z-index:8}
+.character-card-copy h2,.character-card-copy p,.character-card-role{z-index:9}
+
+/* Page-specific list language */
+body[data-page="personas"] .entity-list .entity-link,
+body[data-page="shadows"] .entity-list .entity-link,
+body[data-page="palaces"] .entity-list .entity-link{transform:rotate(0deg)}
+
+body[data-page="shadows"] .entity-list .entity-link{
+  background:#050505;border-color:#555;box-shadow:7px 7px 0 #3a080c;
+}
+body[data-page="shadows"] .entity-list .entity-link h2{font-family:monospace}
+body[data-page="shadows"] .entity-list .entity-link::before{
+  background:repeating-linear-gradient(90deg,transparent 0 20px,rgba(226,27,35,.18) 21px 23px,transparent 24px 46px);
+  opacity:.5;
+}
+body[data-page="shadows"] .entity-list .entity-link:hover{border-color:#fff;box-shadow:12px 12px 0 var(--red-dark)}
+
+body[data-page="palaces"] .entity-list .entity-link{
+  min-height:190px;background:linear-gradient(115deg,#090909,#151515);
+  border-color:#fff;box-shadow:9px 9px 0 #000;
+}
+body[data-page="palaces"] .entity-list .entity-link h2{font-size:clamp(2rem,5vw,3.6rem)}
+body[data-page="palaces"] .entity-list .entity-link::before{
+  background:repeating-linear-gradient(135deg,transparent 0 55px,rgba(226,27,35,.16) 56px 62px,transparent 63px 110px);
+  opacity:.75;
+}
+body[data-page="palaces"] .entity-list .entity-link:hover{border-color:var(--red);box-shadow:14px 14px 0 var(--red)}
+
+@media(max-width:760px){
+  .character-card-portrait{box-shadow:inset 5px 0 18px rgba(0,0,0,.4)}
+}
