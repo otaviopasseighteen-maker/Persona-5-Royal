@@ -1058,8 +1058,8 @@ body[data-page="palaces"] .entity-list .entity-link:hover{border-color:var(--red
 /* Mobile character title alignment */
 @media(max-width:760px){
   .character-index-hero h1{
-    font-size:45px;
-    transform:translateX(-30px);
+    font-size:49px;
+    transform:translateX(-20px);
   }
 }
 
