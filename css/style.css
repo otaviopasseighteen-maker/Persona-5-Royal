@@ -1214,3 +1214,11 @@ body[data-page="personas"] .persona-card-art img{width:130%;height:125%;max-widt
 body[data-page="personas"] .persona-card:hover .persona-card-art img,body[data-page="personas"] .persona-card:focus-visible .persona-card-art img{transform:translateX(-2%) translateY(-5%) scale(1.08);filter:grayscale(.2) contrast(1.35) brightness(.78);opacity:.9;}
 body[data-page="personas"] .persona-card-1{--card-accent:#e21b23}.persona-card-2{--card-accent:#f2c94c}.persona-card-3{--card-accent:#c5d5ff}.persona-card-4{--card-accent:#b46cff}
 @media(max-width:760px){body[data-page="personas"] .persona-card{grid-template-columns:minmax(0,1fr) minmax(150px,30%);min-height:190px;height:190px;}body[data-page="personas"] .persona-card-copy{padding:1.25rem .9rem;}body[data-page="personas"] .persona-card h2{font-size:clamp(2rem,10vw,3.2rem);}body[data-page="personas"] .persona-card-art{min-height:190px;}body[data-page="personas"] .persona-card-art img{width:130%;height:125%;}}
+
+
+/* PERSONA CARDS — final artwork framing: centered, higher, and visible */
+body[data-page="personas"] .persona-card{grid-template-columns:minmax(0,1fr) minmax(230px,42%);min-height:300px;height:300px;}
+body[data-page="personas"] .persona-card-art{min-height:300px;align-items:center;justify-content:center;overflow:hidden;}
+body[data-page="personas"] .persona-card-art img{width:155%;height:155%;max-width:none;max-height:none;object-fit:contain;object-position:center center;transform:translate(-5%,-9%) scale(1);transform-origin:center center;}
+body[data-page="personas"] .persona-card:hover .persona-card-art img,body[data-page="personas"] .persona-card:focus-visible .persona-card-art img{transform:translate(-5%,-12%) scale(1.06);}
+@media(max-width:760px){body[data-page="personas"] .persona-card{grid-template-columns:minmax(0,1fr) minmax(155px,40%);min-height:250px;height:250px;}body[data-page="personas"] .persona-card-art{min-height:250px;align-items:center;}body[data-page="personas"] .persona-card-art img{width:155%;height:155%;transform:translate(-5%,-10%) scale(1);}.persona-card:hover .persona-card-art img,.persona-card:focus-visible .persona-card-art img{transform:translate(-5%,-12%) scale(1.05);}}
