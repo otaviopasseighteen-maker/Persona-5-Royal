@@ -1029,12 +1029,52 @@ body[data-page="palaces"] .entity-list .entity-link:hover{border-color:var(--red
   .character-card-portrait{box-shadow:inset 5px 0 18px rgba(0,0,0,.4)}
 }
 
-/* CHARACTER FRAME — equal cards, upper-body priority */
-.character-swipe-card{min-height:220px;height:220px;grid-template-columns:minmax(0,1fr) minmax(190px,32%);}
-.character-card-portrait{height:217px;min-height:217px;align-items:flex-start;}
-.character-card-portrait img{width:128%;height:145%;object-fit:contain;object-position:center top;transform:translateX(6%) translateY(-7%);}
-.character-swipe-card:hover .character-card-portrait img,.character-swipe-card:focus-visible .character-card-portrait img{transform:translateX(-1%) translateY(-10%) scale(1.08);}
-@media(max-width:760px){.character-swipe-card{height:205px;min-height:205px;grid-template-columns:minmax(0,1fr) minmax(145px,34%);}.character-card-portrait{height:202px;min-height:202px;}.character-card-portrait img{width:140%;height:145%;transform:translateX(5%) translateY(-7%);}}
+/* CHARACTER FRAME — consistent Phantom Thief artwork + waist-up focus */
+.character-swipe-card{
+  min-height:240px;
+  height:240px;
+  grid-template-columns:minmax(0,1fr) minmax(220px,36%);
+}
+.character-card-portrait{
+  height:237px;
+  min-height:237px;
+  align-items:flex-start;
+  justify-content:center;
+  overflow:hidden;
+}
+.character-card-portrait img{
+  width:158%;
+  height:170%;
+  object-fit:contain;
+  object-position:50% 0%;
+  transform:translateX(4%) translateY(0) scale(1);
+  transform-origin:50% 0%;
+}
+.character-swipe-card:hover .character-card-portrait img,
+.character-swipe-card:focus-visible .character-card-portrait img{
+  transform:translateX(-1%) translateY(0) scale(1.07);
+  transform-origin:50% 0%;
+}
+@media(max-width:760px){
+  .character-swipe-card{
+    height:220px;
+    min-height:220px;
+    grid-template-columns:minmax(0,1fr) minmax(155px,36%);
+  }
+  .character-card-portrait{
+    height:217px;
+    min-height:217px;
+  }
+  .character-card-portrait img{
+    width:165%;
+    height:170%;
+    transform:translateX(3%) translateY(0) scale(1);
+  }
+  .character-swipe-card:hover .character-card-portrait img,
+  .character-swipe-card:focus-visible .character-card-portrait img{
+    transform:translateX(-1%) translateY(0) scale(1.06);
+  }
+}
 /* PERSONAS / SHADOWS / PALACES — CHARACTER-STYLE INDEX */
 body[data-page="personas"] .persona-list,body[data-page="shadows"] .entity-list,body[data-page="palaces"] .entity-list{display:grid;gap:1.15rem;}
 body[data-page="personas"] .persona-card,body[data-page="shadows"] .entity-link,body[data-page="palaces"] .entity-link{position:relative;min-height:190px;overflow:hidden;border:3px solid #fff;background:#111;color:#fff;box-shadow:8px 8px 0 #000;clip-path:polygon(1% 0,100% 3%,98% 100%,0 96%);}
