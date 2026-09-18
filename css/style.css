@@ -347,3 +347,126 @@ article.shadow-detail,
   main { width: min(100% - 1rem, 1120px); }
   .entity-link { min-height: 76px; padding: 1rem; }
 }
+
+/* --- P5R motion / collage layer --- */
+html.motion-ready #site-navigation a {
+  will-change: transform;
+}
+
+html.motion-ready .home-hero h1 {
+  text-shadow: 5px 5px 0 var(--red-dark);
+}
+
+html.motion-ready .home-hero h1 span {
+  display: inline-block;
+  animation: title-snap .7s cubic-bezier(.16,1,.3,1) .2s both;
+}
+
+@keyframes title-snap {
+  from { opacity: 0; transform: translateX(-28px) skewX(-12deg); clip-path: inset(0 100% 0 0); }
+  to { opacity: 1; transform: translateX(0) skewX(0); clip-path: inset(0 0 0 0); }
+}
+
+.home-hero .eyebrow {
+  position: relative;
+  width: fit-content;
+}
+
+.home-hero .eyebrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -.35rem;
+  width: 0;
+  height: 3px;
+  background: var(--red);
+  animation: slash-grow .65s cubic-bezier(.16,1,.3,1) .45s forwards;
+}
+
+@keyframes slash-grow {
+  to { width: 100%; }
+}
+
+.entity-link,
+.persona-card,
+.confidant-rank-card,
+article.character-detail,
+article.persona-detail,
+article.palace-detail,
+article.shadow-detail {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --mx: 50%;
+  --my: 50%;
+  transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transition: transform .2s cubic-bezier(.2,.8,.2,1), box-shadow .2s ease, background .2s ease;
+}
+
+.entity-link::after {
+  position: relative;
+  z-index: 2;
+}
+
+.entity-link::before {
+  z-index: 1;
+}
+
+.entity-link > *,
+.persona-card > *,
+.confidant-rank-card > *,
+article.character-detail > *,
+article.persona-detail > *,
+article.palace-detail > *,
+article.shadow-detail > * {
+  position: relative;
+  z-index: 2;
+}
+
+.entity-link:hover,
+.entity-link:focus-visible {
+  box-shadow: 10px 10px 0 var(--red-dark);
+}
+
+.entity-link:hover::after {
+  animation: arrow-punch .35s cubic-bezier(.16,1,.3,1);
+}
+
+@keyframes arrow-punch {
+  50% { transform: translate(7px,-6px) rotate(-14deg) scale(1.3); }
+}
+
+.click-impact {
+  position: fixed;
+  z-index: 9999;
+  width: 14px;
+  height: 14px;
+  border: 3px solid var(--red);
+  background: transparent;
+  pointer-events: none;
+  transform: translate(-50%,-50%);
+}
+
+.persona-card,
+.confidant-rank-card {
+  border: 3px solid var(--black);
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: 6px 6px 0 var(--red);
+}
+
+.persona-card:hover,
+.confidant-rank-card:hover {
+  box-shadow: 10px 10px 0 var(--red-dark);
+}
+
+@media (max-width: 760px) {
+  .entity-link,
+  .persona-card,
+  .confidant-rank-card,
+  article.character-detail,
+  article.persona-detail,
+  article.palace-detail,
+  article.shadow-detail {
+    transform: none;
+  }
+}
