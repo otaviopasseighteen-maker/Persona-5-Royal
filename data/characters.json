@@ -13,7 +13,8 @@
     "affiliation": "Phantom Thieves",
     "bio": "A student who is falsely convicted of assault after intervening when a corrupt politician harasses a woman. With a criminal record attached to his name, he is sent to Tokyo on probation and placed under the care of Sojiro Sakura at Café Leblanc. In his new life, he discovers the Metaverse, awakens to Arsène, and begins the journey that leads him to become the leader of the Phantom Thieves.",
     "personaRole": "Wild Card",
-    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara1_costume2_f44dcfe012ae7b8b2241c093a5df2ef8.png"
+    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara1_costume2_f44dcfe012ae7b8b2241c093a5df2ef8.png",
+    "profileImage": "https://persona.atlus.com/p5r/resources/img/p5r/chara1_costume2_f44dcfe012ae7b8b2241c093a5df2ef8.png"
   },
   {
     "id": "morgana",
@@ -29,7 +30,8 @@
     "affiliation": "Phantom Thieves",
     "bio": "A mysterious being found inside Kamoshida's Palace who believes he was once human. Morgana guides the newly formed Phantom Thieves through the Metaverse, teaches them how Palaces work, and joins their mission to uncover the truth about his own existence.",
     "personaRole": "Magician Persona",
-    "image": "https://vignette.wikia.nocookie.net/megamitensei/images/e/ea/P5R_Morgana_2.png/revision/latest/scale-to-width-down/1200?cb=20190816161056"
+    "image": "https://vignette.wikia.nocookie.net/megamitensei/images/e/ea/P5R_Morgana_2.png/revision/latest/scale-to-width-down/1200?cb=20190816161056",
+    "profileImage": "https://persona.atlus.com/p5r/resources/img/p5r/chara7_costume1_0ef480a6079673415121788e24ae956c.png"
   },
   {
     "id": "ryuji-sakamoto",
@@ -45,7 +47,8 @@
     "affiliation": "Phantom Thieves / Former track team member",
     "bio": "A former member of Shujin Academy's track team whose promising athletic career was destroyed by Kamoshida's abuse. After meeting Joker and awakening to his Persona, Ryuji becomes one of the first Phantom Thieves and finds a new purpose fighting those who abuse their power.",
     "personaRole": "Chariot Persona",
-    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara2_costume2_c4d9fb67c0fac8d77d406dc05382c438.png"
+    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara2_costume2_c4d9fb67c0fac8d77d406dc05382c438.png",
+    "profileImage": "https://persona.atlus.com/p5r/resources/img/p5r/chara2_costume2_c4d9fb67c0fac8d77d406dc05382c438.png"
   },
   {
     "id": "ann-takamaki",
@@ -61,7 +64,8 @@
     "affiliation": "Phantom Thieves",
     "bio": "A popular model and student at Shujin Academy who has struggled with isolation and rumors surrounding her friendship with Shiho Suzui. Her experiences with Kamoshida's abuse lead her to join Joker and Ryuji in confronting him, awakening Carmen and beginning her life as a Phantom Thief.",
     "personaRole": "Lovers Persona",
-    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara3_costume2_1d25bc2175aa9af991d2115d5b415683.png"
+    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara3_costume2_1d25bc2175aa9af991d2115d5b415683.png",
+    "profileImage": "https://persona.atlus.com/p5r/resources/img/p5r/chara3_costume2_1d25bc2175aa9af991d2115d5b415683.png"
   },
   {
     "id": "yusuke-kitagawa",
@@ -77,7 +81,8 @@
     "affiliation": "Phantom Thieves / Kosei High School",
     "bio": "A gifted art student from Kosei High School and a pupil of the famous painter Ichiryusai Madarame. Yusuke initially approaches the Phantom Thieves while investigating his mentor, eventually discovering the truth behind Madarame's exploitation and awakening to Goemon.",
     "personaRole": "Emperor Persona",
-    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara8_costume2_8a3dc7066653630623a549c742d03014.png"
+    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara8_costume2_8a3dc7066653630623a549c742d03014.png",
+    "profileImage": "https://persona.atlus.com/p5r/resources/img/p5r/chara8_costume2_8a3dc7066653630623a549c742d03014.png"
   },
   {
     "id": "makoto-nijima",
@@ -93,7 +98,8 @@
     "affiliation": "Phantom Thieves / Shujin Academy",
     "bio": "Shujin Academy's student council president and Sae Niijima's younger sister. Initially pressured to investigate the Phantom Thieves, Makoto becomes involved with their case and discovers the Palace of a criminal underworld figure. Her confrontation with her own expectations awakens Johanna and leads her to join the team.",
     "personaRole": "Priestess Persona",
-    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara4_costume2_4eded9dabcc3f44861fd05cc8f742937.png"
+    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara4_costume2_4eded9dabcc3f44861fd05cc8f742937.png",
+    "profileImage": "https://persona.atlus.com/p5r/resources/img/p5r/chara4_costume2_4eded9dabcc3f44861fd05cc8f742937.png"
   },
   {
     "id": "futaba-sakura",
@@ -109,7 +115,8 @@
     "affiliation": "Phantom Thieves",
     "bio": "A highly gifted shut-in and hacker living under Sojiro Sakura's care. After her mother's death and years of isolation, Futaba develops severe guilt and withdraws from the outside world. The Phantom Thieves enter her Palace, helping her confront the distorted beliefs surrounding her past and awaken Necronomicon.",
     "personaRole": "Hermit Persona",
-    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara9_costume2_0367eb85de7c9934b1dcc9cc946decad.png"
+    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara9_costume2_0367eb85de7c9934b1dcc9cc946decad.png",
+    "profileImage": "https://persona.atlus.com/p5r/resources/img/p5r/chara9_costume2_0367eb85de7c9934b1dcc9cc946decad.png"
   },
   {
     "id": "haru-okumura",
@@ -125,7 +132,8 @@
     "affiliation": "Phantom Thieves / Okumura Foods",
     "bio": "The daughter of Okumura Foods' president, Haru initially appears to live a privileged life but is trapped by her father's plans for her future. After meeting the Phantom Thieves and facing the distorted reality surrounding her family, she awakens to Milady and joins their fight.",
     "personaRole": "Empress Persona",
-    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara5_costume2_885922bde83713ef54946bbc06f37095.png"
+    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara5_costume2_885922bde83713ef54946bbc06f37095.png",
+    "profileImage": "https://persona.atlus.com/p5r/resources/img/p5r/chara5_costume2_885922bde83713ef54946bbc06f37095.png"
   },
   {
     "id": "goro-akechi",
@@ -141,7 +149,8 @@
     "affiliation": "Public Security / Phantom Thieves",
     "bio": "A young detective known to the public as the Detective Prince. Akechi becomes involved in the growing Phantom Thieves case and develops a complicated relationship with Joker. His Persona, Robin Hood, represents the heroic image he presents while his connection to the larger conspiracy gradually becomes central to the story.",
     "personaRole": "Justice Persona",
-    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara10_costume2_6096ac361b526c5595ed09db455ef810.png"
+    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara10_costume2_6096ac361b526c5595ed09db455ef810.png",
+    "profileImage": "https://persona.atlus.com/p5r/resources/img/p5r/chara10_costume2_6096ac361b526c5595ed09db455ef810.png"
   },
   {
     "id": "kasumi-yoshizawa",
@@ -157,6 +166,7 @@
     "affiliation": "Shujin Academy / Phantom Thieves",
     "bio": "A talented rhythmic gymnast who transfers to Shujin Academy around the same time Joker begins his new life in Tokyo. Kasumi meets Joker during his first year and gradually becomes involved with the events surrounding the Phantom Thieves, eventually awakening to Cendrillon and taking her own place in the story.",
     "personaRole": "Faith Persona",
-    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara6_costume2_4d6a09bb1b6476f742d0d8396236fedd.png"
+    "image": "https://persona.atlus.com/p5r/resources/img/p5r/chara6_costume2_4d6a09bb1b6476f742d0d8396236fedd.png",
+    "profileImage": "https://persona.atlus.com/p5r/resources/img/p5r/chara6_costume2_4d6a09bb1b6476f742d0d8396236fedd.png"
   }
 ]
