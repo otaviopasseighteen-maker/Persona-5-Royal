@@ -1028,3 +1028,21 @@ body[data-page="palaces"] .entity-list .entity-link:hover{border-color:var(--red
 @media(max-width:760px){
   .character-card-portrait{box-shadow:inset 5px 0 18px rgba(0,0,0,.4)}
 }
+
+/* CHARACTER FRAME — equal cards, upper-body priority */
+.character-swipe-card{min-height:220px;height:220px;grid-template-columns:minmax(0,1fr) minmax(190px,32%);}
+.character-card-portrait{height:217px;min-height:217px;align-items:flex-start;}
+.character-card-portrait img{width:128%;height:145%;object-fit:contain;object-position:center top;transform:translateX(6%) translateY(-7%);}
+.character-swipe-card:hover .character-card-portrait img,.character-swipe-card:focus-visible .character-card-portrait img{transform:translateX(-1%) translateY(-10%) scale(1.08);}
+@media(max-width:760px){.character-swipe-card{height:205px;min-height:205px;grid-template-columns:minmax(0,1fr) minmax(145px,34%);}.character-card-portrait{height:202px;min-height:202px;}.character-card-portrait img{width:140%;height:145%;transform:translateX(5%) translateY(-7%);}}
+/* PERSONAS / SHADOWS / PALACES — CHARACTER-STYLE INDEX */
+body[data-page="personas"] .persona-list,body[data-page="shadows"] .entity-list,body[data-page="palaces"] .entity-list{display:grid;gap:1.15rem;}
+body[data-page="personas"] .persona-card,body[data-page="shadows"] .entity-link,body[data-page="palaces"] .entity-link{position:relative;min-height:190px;overflow:hidden;border:3px solid #fff;background:#111;color:#fff;box-shadow:8px 8px 0 #000;clip-path:polygon(1% 0,100% 3%,98% 100%,0 96%);}
+body[data-page="personas"] .persona-card::before,body[data-page="shadows"] .entity-link::before,body[data-page="palaces"] .entity-link::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 48%,rgba(226,27,35,.72) 48.2% 57%,transparent 57.2%),repeating-linear-gradient(135deg,transparent 0 48px,rgba(255,255,255,.035) 49px 52px,transparent 53px 100px);opacity:.8;pointer-events:none;}
+body[data-page="personas"] .persona-card>*,body[data-page="shadows"] .entity-link>*,body[data-page="palaces"] .entity-link>*{position:relative;z-index:2;}
+body[data-page="personas"] .persona-card{display:flex;flex-direction:column;justify-content:center;padding:clamp(1.4rem,5vw,3rem);transform:rotate(-.35deg);transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s;}
+body[data-page="personas"] .persona-card:nth-child(even){transform:rotate(.3deg);}
+body[data-page="personas"] .persona-card h2,body[data-page="shadows"] .entity-link h2,body[data-page="palaces"] .entity-link h2{margin:0;font-size:clamp(2.1rem,6vw,4.4rem);line-height:.82;font-style:italic;letter-spacing:-.06em;text-transform:uppercase;}
+body[data-page="personas"] .persona-card p,body[data-page="shadows"] .entity-link p,body[data-page="palaces"] .entity-link p{color:#aaa;text-transform:uppercase;font-size:.75rem;font-weight:900;}
+body[data-page="personas"] .persona-card a,body[data-page="shadows"] .entity-link>a,body[data-page="palaces"] .entity-link>a{align-self:flex-start;margin-top:.7rem;padding:.65rem .85rem;background:var(--red);color:#fff;font-weight:1000;text-transform:uppercase;clip-path:polygon(4% 0,100% 8%,96% 100%,0 92%);}
+body[data-page="personas"] .persona-card:hover,body[data-page="shadows"] .entity-link:hover,body[data-page="palaces"] .entity-link:hover{transform:translateX(8px) rotate(0) scale(1.01);box-shadow:14px 14px 0 var(--red);}
