@@ -32,7 +32,7 @@ function renderNavigation() {
   const target = document.querySelector('#site-navigation');
   if (!target) return;
   const prefix = navigationPrefix();
-  target.innerHTML = `<a href="${homeLink()}">Home</a> <a href="${prefix}characters.html">Characters</a> <a href="${prefix}personas.html">Personas</a> <a href="${prefix}shadows.html">Shadows</a> <a href="${prefix}palaces.html">Palaces</a> <a href="${prefix}confidants.html">Confidants</a> <a href="${prefix}skills.html">Skills</a> <a href="${prefix}items.html">Items</a> <a href="${prefix}guide.html">Guide</a>`;
+  target.innerHTML = `<a href="${homeLink()}">Home</a> <a href="${prefix}characters.html">Characters</a> <a href="${prefix}personas.html">Personas</a> <a href="${prefix}shadows.html">Shadows</a> <a href="${prefix}palaces.html">Palaces</a> <a href="${prefix}confidants.html">Confidants</a>`;
 }
 
 function renderList(palaces) {
