@@ -1058,13 +1058,19 @@ body[data-page="personas"] .persona-card:hover,body[data-page="shadows"] .entity
 
 /* Desktop portrait alignment — Morgana and Ann only */
 @media(min-width:761px){
-  .character-swipe-card.character-morgana .character-card-portrait img{
+  .character-swipe-card.character-morgana .character-card-portrait img,
+  .character-swipe-card.character-morgana:hover .character-card-portrait img,
+  .character-swipe-card.character-morgana:focus-visible .character-card-portrait img{
     position:relative;
     top:-28px;
+    transform:translateX(3%) scale(1);
   }
-  .character-swipe-card.character-ann-takamaki .character-card-portrait img{
+  .character-swipe-card.character-ann-takamaki .character-card-portrait img,
+  .character-swipe-card.character-ann-takamaki:hover .character-card-portrait img,
+  .character-swipe-card.character-ann-takamaki:focus-visible .character-card-portrait img{
     position:relative;
-    top:-24px;
+    top:-34px;
+    transform:translateX(-1%) scale(1);
   }
 }
 
