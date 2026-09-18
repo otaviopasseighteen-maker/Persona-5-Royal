@@ -1194,3 +1194,11 @@ body[data-page="personas"] .persona-card-arrow{position:absolute!important;right
 body[data-page="personas"] .persona-card:hover,body[data-page="personas"] .persona-card:focus-visible{transform:translate(7px,-7px) rotate(-.4deg);box-shadow:15px 15px 0 var(--red);border-color:var(--red);}
 body[data-page="personas"] .persona-card:hover .persona-card-art img,body[data-page="personas"] .persona-card:focus-visible .persona-card-art img{filter:grayscale(.1) contrast(1.35) brightness(.9) drop-shadow(0 0 22px rgba(226,27,35,.25));transform:translateY(2%) scale(1.045);}
 @media(max-width:760px){body[data-page="personas"] .persona-list{grid-template-columns:1fr;}body[data-page="personas"] .persona-card{grid-template-columns:minmax(0,1fr) minmax(145px,40%);min-height:240px;}body[data-page="personas"] .persona-card-copy{padding:1.35rem 1rem 1.2rem;}body[data-page="personas"] .persona-card h2{font-size:clamp(2.1rem,12vw,3.5rem);}body[data-page="personas"] .persona-card-art img{width:155%;height:155%;}}
+
+
+/* PERSONA CARDS — clean mobile/desktop layering pass */
+body[data-page="personas"] .persona-card-copy{position:relative;z-index:6!important;align-self:center;padding:2rem 1.6rem;}
+body[data-page="personas"] .persona-card-art{position:relative;z-index:3!important;min-width:0;}
+body[data-page="personas"] .persona-card-art img{position:relative;z-index:4;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center bottom;filter:grayscale(.7) contrast(1.2) brightness(.68) drop-shadow(0 0 16px rgba(0,0,0,.9));transform:none;}
+body[data-page="personas"] .persona-card:hover .persona-card-art img,body[data-page="personas"] .persona-card:focus-visible .persona-card-art img{transform:scale(1.04);filter:grayscale(.08) contrast(1.3) brightness(.9) drop-shadow(0 0 20px rgba(226,27,35,.25));}
+@media(max-width:760px){body[data-page="personas"] .persona-card{grid-template-columns:minmax(0,1fr) minmax(135px,40%);min-height:250px;height:250px;}body[data-page="personas"] .persona-card-copy{padding:1.25rem .9rem;}.persona-card-stage{font-size:.62rem!important;}body[data-page="personas"] .persona-card h2{font-size:clamp(1.9rem,10vw,3.1rem);}.persona-card-art img{width:100%!important;height:100%!important;max-width:100%;max-height:100%;}}
