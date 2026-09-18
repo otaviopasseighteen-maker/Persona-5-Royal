@@ -1056,54 +1056,30 @@ body[data-page="personas"] .persona-card p,body[data-page="shadows"] .entity-lin
 body[data-page="personas"] .persona-card a,body[data-page="shadows"] .entity-link>a,body[data-page="palaces"] .entity-link>a{align-self:flex-start;margin-top:.7rem;padding:.65rem .85rem;background:var(--red);color:#fff;font-weight:1000;text-transform:uppercase;clip-path:polygon(4% 0,100% 8%,96% 100%,0 92%);}
 body[data-page="personas"] .persona-card:hover,body[data-page="shadows"] .entity-link:hover,body[data-page="palaces"] .entity-link:hover{transform:translateX(8px) rotate(0) scale(1.01);box-shadow:14px 14px 0 var(--red);}
 
-/* CHARACTER PORTRAIT ALIGNMENT — final individual framing */
+/* Haru/Kasumi portrait framing — face visibility */
 .character-swipe-card.character-haru-okumura .character-card-portrait img{
-  transform:translateX(-8%) translateY(0) scale(1.02);
+  transform:translateX(14%) translateY(-2%) scale(1.08);
 }
 .character-swipe-card.character-kasumi-yoshizawa .character-card-portrait img{
-  transform:translateX(-8%) translateY(0) scale(1.02);
-}
-.character-swipe-card.character-ann-takamaki .character-card-portrait img{
-  transform:translateX(-3%) translateY(0) scale(1.02);
-}
-.character-swipe-card.character-morgana .character-card-portrait img{
-  transform:translateX(3%) translateY(-7%) scale(1.02);
+  transform:translateX(24%) translateY(-1%) scale(1.10);
 }
 .character-swipe-card.character-haru-okumura:hover .character-card-portrait img,
 .character-swipe-card.character-haru-okumura:focus-visible .character-card-portrait img{
-  transform:translateX(-8%) translateY(0) scale(1.09);
+  transform:translateX(14%) translateY(-2%) scale(1.15);
 }
 .character-swipe-card.character-kasumi-yoshizawa:hover .character-card-portrait img,
 .character-swipe-card.character-kasumi-yoshizawa:focus-visible .character-card-portrait img{
-  transform:translateX(-8%) translateY(0) scale(1.09);
-}
-.character-swipe-card.character-ann-takamaki:hover .character-card-portrait img,
-.character-swipe-card.character-ann-takamaki:focus-visible .character-card-portrait img{
-  transform:translateX(-3%) translateY(0) scale(1.09);
-}
-.character-swipe-card.character-morgana:hover .character-card-portrait img,
-.character-swipe-card.character-morgana:focus-visible .character-card-portrait img{
-  transform:translateX(3%) translateY(-7%) scale(1.09);
+  transform:translateX(24%) translateY(-1%) scale(1.17);
 }
 @media(max-width:760px){
   .character-swipe-card.character-haru-okumura .character-card-portrait img,
   .character-swipe-card.character-haru-okumura:hover .character-card-portrait img,
   .character-swipe-card.character-haru-okumura:focus-visible .character-card-portrait img{
-    transform:translateX(-8%) translateY(0) scale(1.02);
+    transform:translateX(14%) translateY(-2%) scale(1.08);
   }
   .character-swipe-card.character-kasumi-yoshizawa .character-card-portrait img,
   .character-swipe-card.character-kasumi-yoshizawa:hover .character-card-portrait img,
   .character-swipe-card.character-kasumi-yoshizawa:focus-visible .character-card-portrait img{
-    transform:translateX(-8%) translateY(0) scale(1.02);
-  }
-  .character-swipe-card.character-ann-takamaki .character-card-portrait img,
-  .character-swipe-card.character-ann-takamaki:hover .character-card-portrait img,
-  .character-swipe-card.character-ann-takamaki:focus-visible .character-card-portrait img{
-    transform:translateX(-3%) translateY(0) scale(1.02);
-  }
-  .character-swipe-card.character-morgana .character-card-portrait img,
-  .character-swipe-card.character-morgana:hover .character-card-portrait img,
-  .character-swipe-card.character-morgana:focus-visible .character-card-portrait img{
-    transform:translateX(3%) translateY(-7%) scale(1.02);
+    transform:translateX(24%) translateY(-1%) scale(1.10);
   }
 }
