@@ -1073,7 +1073,7 @@ body[data-page="personas"] .persona-card:hover,body[data-page="shadows"] .entity
   .character-swipe-card.character-morgana:hover .character-card-portrait img,
   .character-swipe-card.character-morgana:focus-visible .character-card-portrait img{
     position:relative;
-    top:-100px;
+    top:-115px;
     transform:translateX(3%) scale(1);
   }
   .character-swipe-card.character-ann-takamaki .character-card-portrait img,
