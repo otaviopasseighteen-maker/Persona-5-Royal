@@ -1349,3 +1349,66 @@ body[data-page="personas"] .persona-card:hover .persona-card-art img,body[data-p
 @media(max-width:1199px) and (min-width:761px){
   body[data-page="personas"] .persona-list{grid-template-columns:1fr;}
 }
+
+
+/* PERSONA ROSTER — typography, logo and header refinement */
+@media(min-width:761px){
+  body[data-page="personas"] #site-navigation{
+    min-height:88px;
+    padding-left:250px;
+    padding-right:235px;
+  }
+  body[data-page="personas"] #site-navigation::before{
+    left:24px;
+    top:7px;
+    width:215px;
+    height:76px;
+    background-size:contain;
+  }
+  body[data-page="personas"] #site-navigation::after{
+    right:18px;
+    top:10px;
+    width:195px;
+    height:66px;
+    font-size:24px;
+  }
+
+  body[data-page="personas"] .persona-card{
+    grid-template-columns:minmax(0,54%) minmax(0,46%) !important;
+    height:224px !important;
+    min-height:224px !important;
+  }
+  body[data-page="personas"] .persona-card-art{
+    height:220px !important;
+    min-height:220px !important;
+  }
+  body[data-page="personas"] .persona-card-art img{
+    width:158% !important;
+    height:158% !important;
+    transform:translate(-4%,3%) scale(1.02) !important;
+  }
+  body[data-page="personas"] .persona-card-copy{
+    padding:1rem 1.15rem !important;
+    justify-content:center;
+  }
+  body[data-page="personas"] .persona-card-copy h2{
+    font-size:clamp(1.8rem,2.35vw,3rem) !important;
+    line-height:.86 !important;
+    letter-spacing:-.055em !important;
+    max-width:100%;
+    white-space:normal !important;
+    overflow:visible !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+  }
+  body[data-page="personas"] .persona-card-copy p{
+    font-size:.62rem !important;
+    line-height:1.05 !important;
+  }
+}
+
+@media(min-width:1200px){
+  body[data-page="personas"] .persona-card-copy h2{
+    font-size:clamp(1.85rem,2.15vw,3rem) !important;
+  }
+}
