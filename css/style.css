@@ -1278,3 +1278,74 @@ body[data-page="personas"] .persona-card:hover .persona-card-art img,body[data-p
 
   body[data-page="personas"] .persona-arsene{--card-accent:#e21b23}.persona-zorro{--card-accent:#e7b928}.persona-captain-kidd{--card-accent:#d9b43b}.persona-carmen{--card-accent:#ec3d82}.persona-goemon{--card-accent:#7138e8}.persona-johanna{--card-accent:#18aee8}.persona-necronomicon{--card-accent:#7a39e8}.persona-milady{--card-accent:#ec3d82}.persona-robin-hood{--card-accent:#55c94a}.persona-cendrillon{--card-accent:#27aee8}
 }
+
+
+/* PERSONA ROSTER — corrective desktop pass */
+@media(min-width:761px){
+  body[data-page="personas"] .persona-list{
+    width:min(1420px,calc(100% - 2rem));
+    max-width:none;
+    padding:0 1rem 60px;
+    margin:0 auto;
+    gap:16px;
+  }
+
+  /* At medium desktop widths, use one wide card so names never get clipped. */
+  body[data-page="personas"] .persona-card{
+    grid-template-columns:minmax(0,58%) minmax(0,42%) !important;
+    height:205px !important;
+    min-height:205px !important;
+    width:100%;
+  }
+  body[data-page="personas"] .persona-card-art{
+    height:201px !important;
+    min-height:201px !important;
+  }
+  body[data-page="personas"] .persona-card-art img{
+    width:150% !important;
+    height:150% !important;
+    object-position:center center !important;
+    transform:translate(-4%,2%) scale(1.02) !important;
+  }
+  body[data-page="personas"] .persona-card-copy{
+    min-width:0;
+    padding:1.1rem 1.4rem !important;
+  }
+  body[data-page="personas"] .persona-card-copy h2{
+    max-width:100%;
+    font-size:clamp(2rem,4.2vw,3.8rem) !important;
+    line-height:.82 !important;
+    overflow-wrap:normal;
+    word-break:normal;
+    white-space:normal;
+  }
+
+  /* Character-linked Persona colors */
+  body[data-page="personas"] .persona-arsene{--card-accent:#e21b23 !important;}
+  body[data-page="personas"] .persona-zorro{--card-accent:#f2c94c !important;}
+  body[data-page="personas"] .persona-captain-kidd{--card-accent:#f5b82e !important;}
+  body[data-page="personas"] .persona-carmen{--card-accent:#ff4f91 !important;}
+  body[data-page="personas"] .persona-goemon{--card-accent:#4d8cff !important;}
+  body[data-page="personas"] .persona-johanna{--card-accent:#39a9e8 !important;}
+  body[data-page="personas"] .persona-necronomicon{--card-accent:#ff7a18 !important;}
+  body[data-page="personas"] .persona-milady{--card-accent:#a66cff !important;}
+  body[data-page="personas"] .persona-robin-hood{--card-accent:#f0f0f0 !important;}
+  body[data-page="personas"] .persona-cendrillon{--card-accent:#ff5d73 !important;}
+
+  body[data-page="personas"] .persona-card::before{
+    background:linear-gradient(112deg,transparent 0 56%,var(--card-accent) 56.3% 66%,transparent 66.3%),
+      linear-gradient(158deg,transparent 0 72%,rgba(255,255,255,.08) 72.2% 75%,transparent 75.2%) !important;
+  }
+  body[data-page="personas"] .persona-card-stage,
+  body[data-page="personas"] .persona-card-arrow{color:var(--card-accent) !important;}
+}
+
+@media(min-width:1200px){
+  body[data-page="personas"] .persona-list{grid-template-columns:repeat(2,minmax(0,1fr));}
+  body[data-page="personas"] .persona-card{height:205px !important;min-height:205px !important;}
+  body[data-page="personas"] .persona-card-copy h2{font-size:clamp(2rem,2.8vw,3.2rem) !important;}
+}
+
+@media(max-width:1199px) and (min-width:761px){
+  body[data-page="personas"] .persona-list{grid-template-columns:1fr;}
+}
