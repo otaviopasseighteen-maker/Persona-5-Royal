@@ -1244,3 +1244,37 @@ body[data-page="personas"] .persona-card:hover .persona-card-art img,body[data-p
 body[data-page="personas"] .persona-card-art img{width:205%;height:205%;object-position:center bottom;transform:translate(-8%,6%);transform-origin:center bottom;}
 body[data-page="personas"] .persona-card:hover .persona-card-art img,body[data-page="personas"] .persona-card:focus-visible .persona-card-art img{transform:translate(-8%,4%) scale(1.04);}
 @media(max-width:760px){body[data-page="personas"] .persona-card-art img{width:210%;height:210%;object-position:center bottom;transform:translate(-8%,7%);transform-origin:center bottom;}body[data-page="personas"] .persona-card:hover .persona-card-art img,body[data-page="personas"] .persona-card:focus-visible .persona-card-art img{transform:translate(-8%,5%) scale(1.03);}}
+
+
+/* PERSONA ROSTER — desktop visual pass based on approved reference */
+@media(min-width:761px){
+  body[data-page="personas"]{background:#070707;}
+  body[data-page="personas"] #site-navigation{position:relative;min-height:78px;display:flex;align-items:center;justify-content:center;gap:2.4rem;padding:0 190px 0 210px;background:linear-gradient(180deg,#050505 0%,#0b0b0b 100%);border-bottom:1px solid rgba(226,27,35,.7);box-shadow:0 12px 30px rgba(0,0,0,.45);}
+  body[data-page="personas"] #site-navigation::before{content:"";position:absolute;left:34px;top:8px;width:150px;height:62px;background:url("https://persona.atlus.com/p5r/resources/img/p5r/fv_logo_ae5920709075a263e06ab44c15fef53e.png") center/contain no-repeat;filter:drop-shadow(0 5px 8px rgba(0,0,0,.7));}
+  body[data-page="personas"] #site-navigation::after{content:"TAKE YOUR\\A HEART";white-space:pre;position:absolute;right:30px;top:12px;width:145px;height:52px;display:flex;align-items:center;justify-content:center;text-align:center;color:#050505;background:#e21b23;clip-path:polygon(5% 8%,100% 0,94% 91%,0 100%);font:900 italic 19px/0.82 Arial,sans-serif;letter-spacing:-.06em;text-transform:uppercase;transform:rotate(-2deg);text-shadow:0 1px 0 rgba(255,255,255,.12);}
+  body[data-page="personas"] #site-navigation a{position:relative;z-index:2;color:#ddd;font-size:.8rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;transition:color .2s ease,transform .2s ease;}
+  body[data-page="personas"] #site-navigation a:hover{color:#e21b23;transform:translateY(-1px);}
+  body[data-page="personas"] #site-navigation a:nth-child(2){color:#e21b23;}
+
+  body[data-page="personas"] .breadcrumb{max-width:1420px;margin:18px auto 8px;padding:0 26px;color:#777;}
+  body[data-page="personas"] .persona-index-hero{max-width:1420px;margin:0 auto;padding:6px 26px 18px;display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid rgba(226,27,35,.45);}
+  body[data-page="personas"] .persona-index-hero h1{margin:0;font-size:clamp(3.5rem,6vw,6.5rem);line-height:.8;font-style:italic;letter-spacing:-.07em;text-transform:uppercase;}
+  body[data-page="personas"] .persona-index-mark{font-size:5rem;font-weight:1000;line-height:.7;color:rgba(255,255,255,.08);}
+  body[data-page="personas"] .persona-index-intro{max-width:1420px;margin:12px auto 22px;padding:0 26px;color:#777;font-size:.85rem;}
+
+  body[data-page="personas"] .persona-list{max-width:1420px;margin:0 auto;padding:0 26px 60px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 18px;}
+  body[data-page="personas"] .persona-card{grid-template-columns:minmax(0,62%) minmax(0,38%);height:178px;min-height:178px;border:2px solid var(--card-accent,#e21b23);background:#070707;box-shadow:0 0 0 1px rgba(255,255,255,.03),0 10px 24px rgba(0,0,0,.28);}
+  body[data-page="personas"] .persona-card::before{z-index:4;background:linear-gradient(112deg,transparent 0 56%,var(--card-accent,#e21b23) 56.3% 66%,transparent 66.3%),linear-gradient(158deg,transparent 0 72%,rgba(255,255,255,.08) 72.2% 75%,transparent 75.2%);opacity:.9;}
+  body[data-page="personas"] .persona-card::after{z-index:1;background:linear-gradient(90deg,rgba(0,0,0,0),rgba(0,0,0,.2));}
+  body[data-page="personas"] .persona-card-art{grid-column:1;min-height:174px;height:174px;align-items:center;justify-content:center;overflow:hidden;}
+  body[data-page="personas"] .persona-card-art img{width:145%;height:145%;object-fit:contain;object-position:center center;filter:grayscale(0) contrast(1.08) brightness(.9) drop-shadow(0 10px 12px rgba(0,0,0,.7));opacity:1;transform:translate(-5%,2%) scale(1.04);mix-blend-mode:normal;}
+  body[data-page="personas"] .persona-card-copy{grid-column:2;padding:1.2rem 1.3rem;justify-content:center;background:linear-gradient(90deg,rgba(7,7,7,.2),rgba(7,7,7,.82) 22%,#070707 62%);}
+  body[data-page="personas"] .persona-card-stage{color:var(--card-accent,#e21b23);font-size:.62rem;}
+  body[data-page="personas"] .persona-card-copy h2{font-size:clamp(1.8rem,2.7vw,3.05rem);line-height:.84;margin:.25rem 0 .45rem;}
+  body[data-page="personas"] .persona-card-copy p{font-size:.67rem;margin:0;color:#ddd;}
+  body[data-page="personas"] .persona-card-index{position:absolute;left:9px;top:6px;z-index:8;font-size:1.05rem;line-height:1;color:#fff;}
+  body[data-page="personas"] .persona-card-arrow{z-index:8;color:var(--card-accent,#e21b23);}
+  body[data-page="personas"] .persona-card:hover .persona-card-art img,body[data-page="personas"] .persona-card:focus-visible .persona-card-art img{transform:translate(-5%,-1%) scale(1.09);filter:grayscale(0) contrast(1.12) brightness(1);}
+
+  body[data-page="personas"] .persona-arsene{--card-accent:#e21b23}.persona-zorro{--card-accent:#e7b928}.persona-captain-kidd{--card-accent:#d9b43b}.persona-carmen{--card-accent:#ec3d82}.persona-goemon{--card-accent:#7138e8}.persona-johanna{--card-accent:#18aee8}.persona-necronomicon{--card-accent:#7a39e8}.persona-milady{--card-accent:#ec3d82}.persona-robin-hood{--card-accent:#55c94a}.persona-cendrillon{--card-accent:#27aee8}
+}
