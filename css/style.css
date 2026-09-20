@@ -1545,3 +1545,157 @@ body[data-page="personas"] .persona-card:hover .persona-card-art img,body[data-p
 }
 @media(min-width:1500px){body[data-page="personas"] .persona-list{width:1320px !important;}body[data-page="personas"] .persona-card{height:390px !important;min-height:390px !important;}body[data-page="personas"] .persona-card-copy{height:68px !important;min-height:68px !important;}body[data-page="personas"] .persona-card-art{height:322px !important;min-height:322px !important;}}
 @media(max-width:760px){body[data-page="personas"] .persona-list{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important;width:100% !important;margin:22px auto 0 !important;padding:0 0 40px !important;}body[data-page="personas"] .persona-card{display:flex !important;flex-direction:column !important;height:285px !important;min-height:285px !important;}body[data-page="personas"] .persona-card-copy{order:1 !important;height:52px !important;min-height:52px !important;padding:9px 8px 5px !important;background:rgba(7,7,7,.92) !important;}body[data-page="personas"] .persona-card-copy h2{font-size:clamp(.85rem,4.3vw,1.2rem) !important;line-height:.88 !important;}body[data-page="personas"] .persona-card-art{order:2 !important;height:233px !important;min-height:233px !important;align-items:flex-end !important;}body[data-page="personas"] .persona-card-art img{width:125% !important;height:125% !important;object-fit:contain !important;object-position:center bottom !important;filter:none !important;transform:none !important;}body[data-page="personas"] .persona-card-index,body[data-page="personas"] .persona-card-arrow,body[data-page="personas"] .persona-card-stage,body[data-page="personas"] .persona-card-copy p{display:none !important;}}
+
+
+/* PERSONA ROSTER — rebuilt from the earlier P5R card pattern (no Canva assets) */
+@media (min-width: 761px){
+  body[data-page="personas"] .persona-list{
+    width:min(1180px,calc(100% - 2rem)) !important;
+    margin:28px auto 0 !important;
+    padding:0 0 56px !important;
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:18px 20px !important;
+  }
+  body[data-page="personas"] .persona-card{
+    position:relative !important;
+    display:grid !important;
+    grid-template-columns:58% 42% !important;
+    width:100% !important;
+    height:250px !important;
+    min-height:250px !important;
+    overflow:hidden !important;
+    isolation:isolate !important;
+    background:#080808 !important;
+    color:#fff !important;
+    border:2px solid var(--card-accent,#e21b23) !important;
+    box-shadow:8px 8px 0 #000 !important;
+    clip-path:polygon(1.5% 0,100% 0,98.5% 100%,0 100%) !important;
+    transition:transform .22s cubic-bezier(.16,1,.3,1),box-shadow .22s ease !important;
+  }
+  body[data-page="personas"] .persona-card::before{
+    content:"" !important;
+    position:absolute !important;
+    inset:0 !important;
+    z-index:4 !important;
+    pointer-events:none !important;
+    background:linear-gradient(158deg,transparent 0 49%,var(--card-accent,#e21b23) 49.5% 53%,transparent 53.5%) !important;
+    opacity:.95 !important;
+  }
+  body[data-page="personas"] .persona-card::after{
+    content:"" !important;
+    position:absolute !important;
+    z-index:1 !important;
+    top:-12%;left:43%;
+    width:16%;height:125%;
+    background:var(--card-accent,#e21b23) !important;
+    transform:rotate(18deg) !important;
+    opacity:.16 !important;
+    pointer-events:none !important;
+  }
+  body[data-page="personas"] .persona-card-art{
+    grid-column:1 !important;
+    position:relative !important;
+    z-index:2 !important;
+    width:100% !important;
+    height:248px !important;
+    min-height:248px !important;
+    display:flex !important;
+    align-items:flex-end !important;
+    justify-content:center !important;
+    overflow:hidden !important;
+    background:radial-gradient(circle at 48% 48%,#1b1b1b 0%,#090909 62%,#030303 100%) !important;
+  }
+  body[data-page="personas"] .persona-card-art img{
+    width:112% !important;
+    height:112% !important;
+    max-width:none !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:center bottom !important;
+    filter:none !important;
+    opacity:1 !important;
+    transform:none !important;
+    transition:transform .35s cubic-bezier(.16,1,.3,1) !important;
+  }
+  body[data-page="personas"] .persona-card-copy{
+    grid-column:2 !important;
+    position:relative !important;
+    z-index:6 !important;
+    width:100% !important;
+    height:100% !important;
+    min-height:0 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    justify-content:flex-end !important;
+    padding:22px 18px 18px !important;
+    background:linear-gradient(90deg,rgba(8,8,8,.62),#080808 30%) !important;
+  }
+  body[data-page="personas"] .persona-card-copy h2{
+    margin:0 !important;
+    color:#fff !important;
+    font-size:clamp(1.45rem,2.05vw,2.35rem) !important;
+    line-height:.82 !important;
+    letter-spacing:-.055em !important;
+    font-style:italic !important;
+    text-transform:uppercase !important;
+    white-space:normal !important;
+    overflow-wrap:anywhere !important;
+  }
+  body[data-page="personas"] .persona-card-copy h2::after{
+    content:"" !important;
+    display:block !important;
+    width:62px !important;
+    height:5px !important;
+    margin-top:10px !important;
+    background:var(--card-accent,#e21b23) !important;
+    transform:skewX(-22deg) !important;
+  }
+  body[data-page="personas"] .persona-card-stage,
+  body[data-page="personas"] .persona-card-copy p,
+  body[data-page="personas"] .persona-card-index,
+  body[data-page="personas"] .persona-card-arrow{display:none !important;}
+  body[data-page="personas"] .persona-card:hover,
+  body[data-page="personas"] .persona-card:focus-visible{
+    transform:translateY(-4px) rotate(-.25deg) !important;
+    box-shadow:12px 12px 0 var(--card-accent,#e21b23) !important;
+  }
+  body[data-page="personas"] .persona-card:hover .persona-card-art img,
+  body[data-page="personas"] .persona-card:focus-visible .persona-card-art img{
+    transform:scale(1.045) translateY(-2%) !important;
+  }
+  body[data-page="personas"] .persona-arsene,
+  body[data-page="personas"] .persona-arsene::before{--card-accent:#e21b23 !important;}
+  body[data-page="personas"] .persona-zorro,
+  body[data-page="personas"] .persona-zorro::before{--card-accent:#f2c94c !important;}
+  body[data-page="personas"] .persona-captain-kidd,
+  body[data-page="personas"] .persona-captain-kidd::before{--card-accent:#f5b82e !important;}
+  body[data-page="personas"] .persona-carmen,
+  body[data-page="personas"] .persona-carmen::before{--card-accent:#ff4f91 !important;}
+  body[data-page="personas"] .persona-goemon,
+  body[data-page="personas"] .persona-goemon::before{--card-accent:#4d8cff !important;}
+  body[data-page="personas"] .persona-johanna,
+  body[data-page="personas"] .persona-johanna::before{--card-accent:#39a9e8 !important;}
+  body[data-page="personas"] .persona-necronomicon,
+  body[data-page="personas"] .persona-necronomicon::before{--card-accent:#ff7a18 !important;}
+  body[data-page="personas"] .persona-milady,
+  body[data-page="personas"] .persona-milady::before{--card-accent:#a66cff !important;}
+  body[data-page="personas"] .persona-robin-hood,
+  body[data-page="personas"] .persona-robin-hood::before{--card-accent:#f0f0f0 !important;}
+  body[data-page="personas"] .persona-cendrillon,
+  body[data-page="personas"] .persona-cendrillon::before{--card-accent:#ff5d73 !important;}
+}
+@media (min-width:1500px){
+  body[data-page="personas"] .persona-list{width:1240px !important;gap:20px 22px !important;}
+  body[data-page="personas"] .persona-card{height:270px !important;min-height:270px !important;}
+  body[data-page="personas"] .persona-card-art{height:268px !important;min-height:268px !important;}
+}
+@media (max-width:760px){
+  body[data-page="personas"] .persona-list{grid-template-columns:1fr !important;gap:14px !important;width:100% !important;margin-top:22px !important;}
+  body[data-page="personas"] .persona-card{display:grid !important;grid-template-columns:58% 42% !important;height:210px !important;min-height:210px !important;}
+  body[data-page="personas"] .persona-card-art{height:208px !important;min-height:208px !important;}
+  body[data-page="personas"] .persona-card-art img{width:112% !important;height:112% !important;object-fit:contain !important;object-position:center bottom !important;}
+  body[data-page="personas"] .persona-card-copy{padding:14px 12px 14px !important;}
+  body[data-page="personas"] .persona-card-copy h2{font-size:clamp(1.35rem,6vw,2rem) !important;line-height:.84 !important;}
+}
