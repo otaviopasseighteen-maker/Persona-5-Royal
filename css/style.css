@@ -1412,3 +1412,43 @@ body[data-page="personas"] .persona-card:hover .persona-card-art img,body[data-p
     font-size:clamp(1.85rem,2.15vw,3rem) !important;
   }
 }
+
+
+/* PERSONA ROSTER — individual artwork framing */
+@media(min-width:761px){
+  body[data-page="personas"] .persona-arsene .persona-card-art img{
+    width:142% !important;height:142% !important;
+    transform:translate(-1%,0) scale(1) !important;
+    object-position:center center !important;
+  }
+  body[data-page="personas"] .persona-carmen .persona-card-art img{
+    width:132% !important;height:132% !important;
+    transform:translate(-1%,1%) scale(1) !important;
+    object-position:center center !important;
+  }
+  body[data-page="personas"] .persona-johanna .persona-card-art img{
+    width:140% !important;height:140% !important;
+    transform:translate(-2%,1%) scale(1) !important;
+    object-position:center center !important;
+  }
+  body[data-page="personas"] .persona-milady .persona-card-art img{
+    width:136% !important;height:136% !important;
+    transform:translate(-1%,1%) scale(1) !important;
+    object-position:center center !important;
+  }
+  body[data-page="personas"] .persona-cendrillon .persona-card-art img{
+    width:142% !important;height:142% !important;
+    transform:translate(-1%,1%) scale(1) !important;
+    object-position:center center !important;
+  }
+  body[data-page="personas"] .persona-arsene:hover .persona-card-art img,
+  body[data-page="personas"] .persona-arsene:focus-visible .persona-card-art img{transform:translate(-1%,-1%) scale(1.05) !important;}
+  body[data-page="personas"] .persona-carmen:hover .persona-card-art img,
+  body[data-page="personas"] .persona-carmen:focus-visible .persona-card-art img{transform:translate(-1%,-1%) scale(1.05) !important;}
+  body[data-page="personas"] .persona-johanna:hover .persona-card-art img,
+  body[data-page="personas"] .persona-johanna:focus-visible .persona-card-art img{transform:translate(-2%,-1%) scale(1.05) !important;}
+  body[data-page="personas"] .persona-milady:hover .persona-card-art img,
+  body[data-page="personas"] .persona-milady:focus-visible .persona-card-art img{transform:translate(-1%,-1%) scale(1.05) !important;}
+  body[data-page="personas"] .persona-cendrillon:hover .persona-card-art img,
+  body[data-page="personas"] .persona-cendrillon:focus-visible .persona-card-art img{transform:translate(-1%,-1%) scale(1.05) !important;}
+}
