@@ -1744,3 +1744,25 @@ body[data-page="personas"] .persona-card:hover .persona-card-art img,body[data-p
     transform:none !important;
   }
 }
+
+/* INDIVIDUAL CHARACTER OVERRIDES */
+@media (min-width: 761px){
+  body[data-page="characters"] .character-profile-joker .character-profile-art{
+    min-height:790px !important;
+  }
+  body[data-page="characters"] .character-profile-joker .character-profile-art img{
+    height:115% !important;
+    max-height:none !important;
+  }
+  body[data-page="characters"] .character-profile-morgana .character-profile-art img{
+    height:82% !important;
+    max-height:82% !important;
+    object-position:center bottom !important;
+  }
+}
+@media (max-width:760px){
+  body[data-page="characters"] .character-profile-joker .character-profile-art img{
+    height:112% !important;
+    max-height:none !important;
+  }
+}
