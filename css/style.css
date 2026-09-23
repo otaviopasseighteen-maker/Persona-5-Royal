@@ -1703,3 +1703,44 @@ body[data-page="personas"] .persona-card:hover .persona-card-art img,body[data-p
 
 /* P5R cinematic page transitions — lightweight, CSS-first */
 .p5r-page-transition{position:fixed;inset:0;z-index:99999;pointer-events:none;overflow:hidden;visibility:hidden}.p5r-transition-slice,.p5r-transition-red{position:absolute;inset:-12%;transform:translateX(110%) skewX(-10deg);will-change:transform}.p5r-transition-slice--one{background:#050505;clip-path:polygon(34% 0,100% 0,72% 100%,0 100%)}.p5r-transition-slice--two{background:#f4f4f4;clip-path:polygon(62% 0,100% 0,100% 100%,28% 100%);transition-delay:55ms}.p5r-transition-red{background:#e40012;clip-path:polygon(55% 0,66% 0,36% 100%,25% 100%);transition-delay:95ms}.p5r-transition-label{position:absolute;left:7vw;bottom:8vh;color:#fff;font-size:clamp(12px,1.2vw,18px);font-weight:900;letter-spacing:.22em;opacity:0;transform:translateY(18px) skewX(-8deg);text-transform:uppercase}.p5r-page-transition.is-active,.p5r-page-transition.is-intro{visibility:visible}.p5r-page-transition.is-active .p5r-transition-slice,.p5r-page-transition.is-active .p5r-transition-red,.p5r-page-transition.is-intro .p5r-transition-slice,.p5r-page-transition.is-intro .p5r-transition-red{transform:translateX(0) skewX(-10deg);transition:transform 460ms cubic-bezier(.76,0,.24,1)}.p5r-page-transition.is-active .p5r-transition-label,.p5r-page-transition.is-intro .p5r-transition-label{opacity:1;transform:translateY(0) skewX(-8deg);transition:opacity 180ms ease 170ms,transform 300ms cubic-bezier(.16,1,.3,1) 170ms}.p5r-page-transition.is-intro-done{visibility:hidden}.p5r-page-transition.is-intro-done .p5r-transition-slice,.p5r-page-transition.is-intro-done .p5r-transition-red{transform:translateX(-115%) skewX(-10deg);transition:transform 360ms cubic-bezier(.76,0,.24,1)}.p5r-page-transition.is-intro-done .p5r-transition-label{opacity:0;transform:translateY(-14px) skewX(-8deg);transition:opacity 120ms ease,transform 180ms ease}.p5r-is-leaving #app,.p5r-is-leaving #site-navigation{animation:p5r-content-exit 360ms cubic-bezier(.76,0,.24,1) both}@keyframes p5r-content-exit{to{opacity:.18;transform:translateX(-28px) skewX(-2deg)}}@media (prefers-reduced-motion:reduce){.p5r-page-transition{display:none}.p5r-is-leaving #app,.p5r-is-leaving #site-navigation{animation:none}}
+
+/* CHARACTER PROFILE ART — full-body transparent cutout standard
+   Reference: the Joker profile artwork supplied by the user.
+   Each character keeps its own profileImage; this only standardizes presentation. */
+@media (min-width: 761px){
+  body[data-page="characters"] .character-profile{
+    grid-template-columns:minmax(360px,42%) 1fr !important;
+    min-height:720px !important;
+  }
+  body[data-page="characters"] .character-profile-art{
+    min-height:690px !important;
+    align-items:flex-end !important;
+    justify-content:center !important;
+    overflow:hidden !important;
+  }
+  body[data-page="characters"] .character-profile-art img{
+    width:auto !important;
+    height:100% !important;
+    max-width:100% !important;
+    max-height:100% !important;
+    object-fit:contain !important;
+    object-position:center bottom !important;
+    transform:none !important;
+    transform-origin:center bottom !important;
+  }
+  body[data-page="characters"] .character-profile:hover .character-profile-art img{
+    transform:scale(1.018) !important;
+    transform-origin:center bottom !important;
+  }
+}
+@media (max-width:760px){
+  body[data-page="characters"] .character-profile-art img{
+    width:auto !important;
+    height:100% !important;
+    max-width:100% !important;
+    max-height:100% !important;
+    object-fit:contain !important;
+    object-position:center bottom !important;
+    transform:none !important;
+  }
+}
