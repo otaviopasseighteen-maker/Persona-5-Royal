@@ -1766,3 +1766,251 @@ body[data-page="personas"] .persona-card:hover .persona-card-art img,body[data-p
     max-height:none !important;
   }
 }
+
+
+/* CHARACTER ROSTER — comic shout-bubble dossier cards */
+body[data-page="characters"] .character-burst-roster{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+  margin:34px 0 56px;
+}
+body[data-page="characters"] .character-burst-card{
+  --character-accent:#e21b23;
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(125px,38%) minmax(0,1fr);
+  grid-template-rows:auto auto;
+  align-items:stretch;
+  min-width:0;
+  padding:14px;
+  overflow:visible;
+  color:#fff;
+  background:linear-gradient(145deg,#202020 0%,#090909 68%);
+  border:2px solid var(--character-accent);
+  clip-path:polygon(2.5% 0,100% 0,97.5% 100%,0 100%);
+  box-shadow:8px 8px 0 #000;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+body[data-page="characters"] .character-burst-card::before{
+  content:"";
+  position:absolute;
+  top:0;bottom:0;left:36%;
+  width:10px;
+  background:var(--character-accent);
+  opacity:.9;
+  transform:skewX(-13deg);
+  pointer-events:none;
+}
+body[data-page="characters"] .character-burst-card:hover,
+body[data-page="characters"] .character-burst-card.is-open{
+  transform:translateY(-3px) rotate(-.2deg);
+  box-shadow:10px 10px 0 var(--character-accent);
+}
+body[data-page="characters"] .character-burst-art{
+  position:relative;
+  z-index:1;
+  grid-column:1;
+  grid-row:1 / span 2;
+  min-height:210px;
+  align-self:stretch;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  overflow:hidden;
+  background:radial-gradient(ellipse at 50% 40%,#373737 0%,#141414 58%,#080808 100%);
+}
+body[data-page="characters"] .character-burst-art::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.4),transparent 45%);
+  pointer-events:none;
+}
+body[data-page="characters"] .character-burst-art img{
+  display:block;
+  width:100%;
+  height:100%;
+  max-height:285px;
+  object-fit:contain;
+  object-position:center bottom;
+  filter:drop-shadow(5px 4px 0 rgba(0,0,0,.65));
+  transition:transform .22s ease;
+}
+body[data-page="characters"] .character-burst-card:hover .character-burst-art img{
+  transform:scale(1.035) translateY(-2px);
+}
+body[data-page="characters"] .character-burst-number{
+  position:absolute;
+  z-index:2;
+  top:8px;left:8px;
+  color:var(--character-accent);
+  font-size:1.05rem;
+  font-weight:1000;
+  font-style:italic;
+  text-shadow:2px 2px 0 #000;
+}
+body[data-page="characters"] .character-burst-title{
+  position:relative;
+  z-index:2;
+  grid-column:2;
+  grid-row:1;
+  min-width:0;
+  padding:17px 12px 8px 22px;
+  align-self:center;
+}
+body[data-page="characters"] .character-burst-arcana{
+  display:inline-block;
+  margin-bottom:9px;
+  padding:3px 8px;
+  color:#050505;
+  background:var(--character-accent);
+  font-size:.65rem;
+  font-weight:1000;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  transform:skewX(-8deg);
+}
+body[data-page="characters"] .character-burst-title h2{
+  margin:0;
+  color:#fff;
+  font-size:clamp(1.3rem,2.1vw,2rem);
+  line-height:.9;
+  letter-spacing:-.055em;
+  font-weight:1000;
+  font-style:italic;
+  text-transform:uppercase;
+  overflow-wrap:anywhere;
+}
+body[data-page="characters"] .character-burst-title p{
+  margin:12px 0 0;
+  color:#cfcfcf;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.06em;
+}
+body[data-page="characters"] .character-burst-title p strong{color:var(--character-accent);}
+body[data-page="characters"] .character-burst-toggle{
+  position:relative;
+  z-index:3;
+  grid-column:2;
+  grid-row:2;
+  justify-self:start;
+  align-self:end;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin:8px 0 5px 22px;
+  padding:9px 12px;
+  color:#fff;
+  background:var(--character-accent);
+  border:0;
+  clip-path:polygon(5% 0,100% 0,95% 100%,0 100%);
+  cursor:pointer;
+  font-size:.72rem;
+  font-weight:1000;
+  letter-spacing:.08em;
+  transform:skewX(-3deg);
+  transition:filter .15s ease,transform .15s ease;
+}
+body[data-page="characters"] .character-burst-toggle span{color:#050505;}
+body[data-page="characters"] .character-burst-toggle b{font-size:1.1rem;line-height:1;color:#050505;}
+body[data-page="characters"] .character-burst-toggle:hover,
+body[data-page="characters"] .character-burst-toggle:focus-visible{filter:brightness(1.18);transform:skewX(-3deg) translateY(-2px);}
+body[data-page="characters"] .character-scream-bubble{
+  position:relative;
+  grid-column:1 / -1;
+  margin:20px 5px 7px;
+  padding:22px 20px 18px;
+  color:#111;
+  background:#f5f1e9;
+  border:3px solid #080808;
+  outline:2px solid var(--character-accent);
+  clip-path:polygon(2% 0,100% 3%,97% 96%,4% 100%,0 14%);
+  box-shadow:6px 6px 0 var(--character-accent);
+  animation:character-bubble-in .22s cubic-bezier(.2,.8,.2,1) both;
+}
+body[data-page="characters"] .character-scream-bubble[hidden]{display:none !important;}
+body[data-page="characters"] .character-scream-bubble::before{
+  content:"";
+  position:absolute;
+  top:-20px;left:35%;
+  width:34px;height:30px;
+  background:var(--character-accent);
+  clip-path:polygon(0 0,100% 100%,20% 72%);
+  transform:rotate(-12deg);
+}
+body[data-page="characters"] .character-scream-label{
+  display:inline-block;
+  margin-bottom:15px;
+  padding:4px 9px;
+  color:#fff;
+  background:#090909;
+  font-size:.65rem;
+  font-weight:1000;
+  letter-spacing:.18em;
+  transform:skewX(-8deg);
+}
+body[data-page="characters"] .character-scream-data{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  padding-bottom:15px;
+  border-bottom:2px solid #191919;
+}
+body[data-page="characters"] .character-scream-data>div{min-width:0;}
+body[data-page="characters"] .character-scream-data small,
+body[data-page="characters"] .character-scream-story small{
+  display:block;
+  margin-bottom:5px;
+  color:#555;
+  font-size:.62rem;
+  font-weight:1000;
+  letter-spacing:.08em;
+}
+body[data-page="characters"] .character-scream-data strong,
+body[data-page="characters"] .character-scream-data a{
+  color:#111;
+  font-size:.88rem;
+  font-weight:1000;
+  overflow-wrap:anywhere;
+}
+body[data-page="characters"] .character-scream-data a{
+  text-decoration:underline;
+  text-decoration-color:var(--character-accent);
+  text-decoration-thickness:3px;
+  text-underline-offset:3px;
+}
+body[data-page="characters"] .character-scream-data a:hover{color:#b20e18;}
+body[data-page="characters"] .character-scream-story{padding-top:14px;}
+body[data-page="characters"] .character-scream-story p{
+  margin:0;
+  color:#222;
+  font-size:.9rem;
+  line-height:1.6;
+}
+@keyframes character-bubble-in{
+  from{opacity:0;transform:scale(.96) translateY(8px);}
+  to{opacity:1;transform:scale(1) translateY(0);}
+}
+@media(max-width:900px){
+  body[data-page="characters"] .character-burst-roster{grid-template-columns:1fr;gap:18px;}
+  body[data-page="characters"] .character-burst-card{grid-template-columns:minmax(125px,34%) minmax(0,1fr);}
+  body[data-page="characters"] .character-burst-art{min-height:235px;}
+  body[data-page="characters"] .character-burst-art img{max-height:310px;}
+}
+@media(max-width:520px){
+  body[data-page="characters"] .character-burst-card{grid-template-columns:37% minmax(0,1fr);padding:8px;}
+  body[data-page="characters"] .character-burst-art{min-height:205px;}
+  body[data-page="characters"] .character-burst-art img{max-height:245px;}
+  body[data-page="characters"] .character-burst-title{padding:15px 6px 6px 15px;}
+  body[data-page="characters"] .character-burst-title h2{font-size:clamp(1.12rem,5vw,1.6rem);}
+  body[data-page="characters"] .character-burst-toggle{margin-left:15px;gap:8px;padding:8px;font-size:.64rem;}
+  body[data-page="characters"] .character-scream-bubble{padding:17px 13px 14px;margin:17px 3px 5px;}
+  body[data-page="characters"] .character-scream-data{grid-template-columns:1fr;gap:10px;}
+}
+@media(prefers-reduced-motion:reduce){
+  body[data-page="characters"] .character-scream-bubble{animation:none;}
+  body[data-page="characters"] .character-burst-card,
+  body[data-page="characters"] .character-burst-art img,
+  body[data-page="characters"] .character-burst-toggle{transition:none;}
+}
